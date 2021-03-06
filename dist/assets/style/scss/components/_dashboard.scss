@@ -2,7 +2,7 @@
                 .dashboard-wrapper.active {
                     display: block;
                     h1 {
-                        font-size: 3rem;
+                        font-size: 6rem;
                         text-align: center;
                         padding-top: 2rem;
                         color: $dark-blue;
@@ -32,6 +32,10 @@
                                 font-size: 2.5rem;
                                 text-align: center;
                                 color: $whiteish;
+                            }
+                            p{
+                                font-size: 2.5rem;
+                                color: $orange;
                             }
                         }
 
