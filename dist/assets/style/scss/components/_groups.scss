@@ -1,4 +1,5 @@
-.groups-wrapper{
+.groups-wrapper.active{
+    height: calc(100vh - 10rem);
     nav{
         width: 98%;
         height: 5rem;
@@ -8,6 +9,7 @@
         background-color: $dark-blue;
         border-radius: 0 0 1rem 1rem;
         border-top: 1px solid $whiteish;
+        box-shadow: 0px 5px 10px $dark-blue;
         div{
             cursor: pointer;
             display: flex;
@@ -25,4 +27,90 @@
             color: $orange;
         }
     }
+    .groups-shedule{
+        height: 80%;
+        .physio2-shedule.active{
+            height: 100%;
+            display: grid;
+            padding: 1rem;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 10rem 1fr 1fr;
+            column-gap: 1rem;
+            row-gap: 1rem;
+            .time{
+                grid-column-end: 1;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                li{
+                    height: 50%;
+                    font-size: 3rem;
+                    font-weight: 600;
+                }
+            }
+            .day{
+                display: flex;
+                align-items: center;
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                li{
+                    width: 50%;
+                    text-align: center;
+                }
+            }
+            .events{
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 1rem;
+                box-shadow: 0px 5px 10px $dark-blue;
+                li{
+                    color: $whiteish;
+                    -webkit-transition: color 200ms linear;
+                    -moz-transition: color 200ms linear;
+                    -ms-transition: color 200ms linear;
+                    -o-transition: color 200ms linear;
+                    transition: color 200ms linear; 
+                    cursor: pointer;
+                }
+                li:hover{
+                    color: $orange;
+                }
+            }
+            .mon-thr-19{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                background-color: $light-blue;
+            }
+            .mon-thr-20{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                background-color: $dark-blue;
+            }
+            .thu-fri-19{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                background-color: $dark-blue;
+            }
+            .thu-fri-20{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                background-color: $light-blue;
+            }
+        }
+    }
+}
+.groups-wrapper{
+    display: none;
 }
