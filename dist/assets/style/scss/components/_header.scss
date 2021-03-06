@@ -1,0 +1,27 @@
+header{
+    height: 10rem;
+    background-color: $dark-blue;
+    width: 100%;
+    box-shadow: 0 .5rem 1rem $dark-blue;
+    .user{
+        width: fit-content;
+        height: 100%;
+        float: right;
+        color: $whiteish;
+        display: flex;
+        align-items: center;
+        .user-logo{
+            width: 8rem;
+            height: 8rem;
+            border: .1rem solid $whiteish;
+            border-radius: 100%;
+            margin: 0 1rem 0 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg{
+                font-size: 5rem;
+            }
+        }
+    }
+}

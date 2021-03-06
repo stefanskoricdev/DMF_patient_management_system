@@ -1,0 +1,102 @@
+
+        .main-nav{
+            width: 20rem;
+            height: 100vh;
+            background-color: $dark-blue;
+            border-radius: 0 0 2rem 0;
+            box-shadow: 0px 5px 10px $dark-blue;
+            position: relative;
+            .logo-wrapper{
+                height: 10rem;
+                padding: 1rem 0;
+                .logo{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100%;
+                    height: 8rem;
+                    width: 8rem;
+                    margin: 1rem auto;
+                    border: 3px solid $orange;
+                    h1{
+                        color: $orange;
+                        font-weight: 600;
+                    }
+                }
+            }
+            /*---------LOGO END------------------*/
+            .main-list{
+                height: 30rem;
+                a{
+                    font-weight: 600;
+                    margin-left: .5rem;
+                }
+                a, svg{
+                    font-size: 2rem;
+                    color: $whiteish;
+                    -webkit-transition: color 200ms linear;
+                    -moz-transition: color 200ms linear;
+                    -ms-transition: color 200ms linear;
+                    -o-transition: color 200ms linear;
+                    transition: color 200ms linear; 
+                }
+                li, .patients{
+                    margin-top: 2rem;
+                    padding-left: .5rem;
+                    
+                }
+                li:hover{
+                    svg, a{
+                        color: $orange;
+                    }
+                    ul{
+                        padding-left: 1rem;
+                        svg, a{
+                            color: $whiteish;
+                        }
+                    }
+                }
+                .patients{
+                    li{
+                        display: none;
+                    }
+                    li:hover{
+                        svg, a{
+                            color: $orange;
+                        }
+                    }
+                }
+                .patients:hover{
+                    li{
+                        display: block;
+                    }
+                }
+            }
+            .log-out{
+                position: absolute;
+                left: 3rem;
+                bottom: 2rem;
+                button{
+                    width: calc(fit-content + 2rem);
+                    height: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    background-color: inherit;
+                    color: $whiteish;
+                    border: none;
+                    font-size: 2rem;
+                    -webkit-transition: color 200ms linear;
+                    -moz-transition: color 200ms linear;
+                    -ms-transition: color 200ms linear;
+                    -o-transition: color 200ms linear;
+                    transition: color 200ms linear;      
+                    svg{
+                        padding: 0 .5rem;
+                    }
+                }
+                button:hover{
+                    cursor: pointer;
+                    color: $orange;
+                }
+            }
+        } 

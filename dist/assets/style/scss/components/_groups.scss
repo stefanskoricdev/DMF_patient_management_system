@@ -1,0 +1,28 @@
+.groups-wrapper{
+    nav{
+        width: 98%;
+        height: 5rem;
+        padding: 0 1%;
+        display: flex;
+        color: $whiteish;
+        background-color: $dark-blue;
+        border-radius: 0 0 1rem 1rem;
+        border-top: 1px solid $whiteish;
+        div{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div::after{
+            content: '';
+            width: 2px;
+            height: 80%;
+            background-color: $whiteish;
+            margin: 0 2rem;
+        }
+        div:hover{
+            color: $orange;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.patients-wrapper.active{
+    display: block;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    div{
+        width: 40rem;
+        height: 25rem;
+        background-color: $dark-blue;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 5px 10px $dark-blue;
+        cursor: pointer;
+        h1, svg{
+            font-size: 3rem;
+            color: $whiteish;
+        }
+    }
+}
+.patients-wrapper{
+    display: none;
+}

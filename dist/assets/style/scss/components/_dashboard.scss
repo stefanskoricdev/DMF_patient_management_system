@@ -1,0 +1,61 @@
+
+                .dashboard-wrapper.active {
+                    display: block;
+                    h1 {
+                        font-size: 3rem;
+                        text-align: center;
+                        padding-top: 2rem;
+                    }
+
+                    .stats {
+                        width: 100%;
+                        margin-top: 10rem;
+                        display: grid;
+                        grid-template-columns: auto 40rem auto;
+                        grid-template-rows: auto 20rem 20rem auto;
+                        justify-items: center;
+                        align-content: center;
+
+                        .box {
+                            width: 40rem;
+                            height: 20rem;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $dark-blue;
+                            border-radius: 1rem;
+                            box-shadow: 0px 5px 10px $dark-blue;
+
+                            h2 {
+                                font-size: 2.5rem;
+                                text-align: center;
+                                color: $whiteish;
+                            }
+                        }
+
+                        .patients-stat {
+                            grid-column-start: 2;
+                            grid-column-end: 3;
+                            grid-row-start: 2;
+                            grid-row-end: 3;
+                        }
+
+                        .individual-patients-stat {
+                            grid-column-start: 1;
+                            grid-column-end: 2;
+                            grid-row-start: 3;
+                            grid-row-end: 4;
+                        }
+
+                        .group-patients-stat {
+                            grid-column-start: 3;
+                            grid-column-end: 4;
+                            grid-row-start: 3;
+                            grid-row-end: 4;
+                        }
+                    }
+                }
+                .dashboard-wrapper{
+                    display: none;
+                }

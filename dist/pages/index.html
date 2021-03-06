@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMF Patient Management System</title>
+    <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/style/css/index.css">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <section class="logo-wrapper">
+            <div class="logo">
+                <h1>DMF</h1>
+            </div>
+        </section>
+        <ul class="main-list">
+            <li><i class="fas fa-home"></i><a href="index.html">Dashboard</a></li>
+            <li class="patients"><i class="fas fa-hospital-user"></i><a href="#">Patients</a>
+                <ul>
+                    <li><i class="fas fa-user-injured"></i><a href="#">Individual</a></li>
+                    <li><i class="fas fa-users"></i><a href="#">Group</a></li>
+                </ul>
+            </li>
+            <li><i class="fas fa-tasks"></i><a href="#">Tasks</a></li>
+        </ul>
+        <div class="log-out">
+            <button><i class="fas fa-sign-out-alt"></i>Logout</button>
+        </div>
+    </nav>
+    <section class="main-wrapper">
+        <header>
+            <div class="user">
+                <h2>Admin</h2>
+                <div class="user-logo">
+                    <i class="far fa-user"></i>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!----DASHBOARD START-->
+            <section class="dashboard-wrapper">
+                <h1>Welcome Admin</h1>
+                <section class="stats">
+                    <div class="patients-stat box">
+                        <h2>Active patients</h2>
+                        <h2 id="active-patients-no">50</h2>
+                    </div>
+                    <div class="individual-patients-stat box">
+                        <h2>Individual patients</h2>
+                        <h2 id="indiv-patients-no">15</h2>
+                    </div>
+                    <div class="group-patients-stat box">
+                        <h2>Group patients</h2>
+                        <h2 id="group-patients-no">35</h2>
+                    </div>
+                </section>
+            </section>
+            <!----DASHBOARD END-->
+            <!----PATIENTS START-->
+            <section class="patients-wrapper">
+                <div class="individual-patients">
+                    <i class="fas fa-user-injured"></i>
+                    <h1>Individual</h1>
+                </div>
+                <div class="group-patients">
+                    <i class="fas fa-users"></i>
+                    <h1>Groups</h1>
+                </div>
+            </section>
+            <!----PATIENTS END-->
+            <!----GROUP PATIENTS START-->
+            <section class="groups-wrapper">
+                <nav>
+                    <div id="physio1">
+                        <h1>Marko</h1>
+                    </div>
+                    <div id="physio2">
+                        <h1>Stefan</h1>
+                    </div>
+                </nav>
+                <section class="groups-shedule">
+
+                </section>
+            </section>
+            <!----GROUP PATIENTS END-->
+        </main>
+    </section>
+</body>
+
+</html>
