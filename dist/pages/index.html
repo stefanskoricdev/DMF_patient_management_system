@@ -8,7 +8,7 @@
     <title>DMF Patient Management System</title>
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/style/css/index.css">
-    <script src="../assets/scripts/UI/page_render.js" defer></script>
+
 </head>
 
 <body>
@@ -43,7 +43,7 @@
         </header>
         <main>
             <!----DASHBOARD START-->
-            <section class="dashboard-wrapper">
+            <section class="dashboard-wrapper active">
                 <h1>Welcome Admin</h1>
                 <section class="stats">
                     <div class="patients-stat box">
@@ -74,7 +74,7 @@
             </section>
             <!----PATIENTS END-->
             <!----GROUP PATIENTS START-->
-            <section class="groups-wrapper active">
+            <section class="groups-wrapper">
                 <nav>
                     <div data-handler="physio1-shedule" class="physio-link" id="physio1">
                         <h1>Marko</h1>
@@ -136,7 +136,7 @@
                         </ul>
                         <ul class="day">
                             <li>
-                                <h2>MON-THR</h2>
+                                <h2>MON-THU</h2>
                             </li>
                             <li>
                                 <h2>TUE-FRI</h2>
@@ -208,6 +208,7 @@
             <!----GROUP PATIENTS END-->
         </main>
     </section>
+    <script src="../assets/scripts/UI/PageRender.js"></script>
 </body>
 
 </html>
