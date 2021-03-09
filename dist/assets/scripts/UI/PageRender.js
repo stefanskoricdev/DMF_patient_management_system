@@ -2,6 +2,7 @@ class PageRender {
   constructor() {
     this.mainList = document.querySelector(".main-list");
     this.navLinks = this.mainList.querySelectorAll("a");
+    this.patientsLink = document.querySelector(".patients-link");
     this.main = document.querySelector("main");
     this.mainSections = this.main.querySelectorAll("section");
     this.groupRenderHandler = document.querySelector(".group-patients");
@@ -19,6 +20,12 @@ class PageRender {
     this.groupsNavLinks.forEach((link) => {
       link.addEventListener("click", this.groupsSheduleRender.bind(this));
     });
+    this.patientsLink.addEventListener("click", (e) => {
+      const lists = e.currentTarget.querySelectorAll("li");
+      lists.forEach((list) => {
+        list.classList.toggle("active");
+      });
+    }); //Toggles patients link submenu in main nav
   }
 
   pageRender(event) {
@@ -29,11 +36,12 @@ class PageRender {
       section.classList.remove("active");
     });
     targetSection.classList.add("active");
-  }
+  } // Renders between main pages
   groupsSheduleRender(event) {
     const target = event.currentTarget;
     const handler = target.dataset.handler;
-    const targetSection = document.querySelector("." + handler);
+    const targetSection = document.getElementById(handler);
+    console.log(handler);
     this.groupsSheduleArea.forEach((area) => {
       area.classList.remove("active");
     });

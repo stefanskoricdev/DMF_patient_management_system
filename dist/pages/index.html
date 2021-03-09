@@ -8,19 +8,18 @@
     <title>DMF Patient Management System</title>
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/style/css/index.css">
-
+    <script src="../assets/scripts/UI/PageRender.js" defer></script>
 </head>
 
 <body>
     <nav class="main-nav">
         <section class="logo-wrapper">
-            <div class="logo">
-                <a href="index.html">DMF</a>
-            </div>
+            <a href="index.html"><img src="../assets/img/logo.png" alt="dmg_logo" width="200px" height="200px"></a>
         </section>
         <ul class="main-list">
             <li><i class="fas fa-home"></i><a data-handler="dashboard-wrapper">Dashboard</a></li>
-            <li class="patients"><i class="fas fa-hospital-user"></i><a data-handler="patients-wrapper">Patients</a>
+            <li class="patients-link"><i class="fas fa-hospital-user"></i><a
+                    data-handler="patients-wrapper">Patients</a>
                 <ul>
                     <li><i class="fas fa-user-injured"></i><a>Individual</a></li>
                     <li><i class="fas fa-users"></i><a data-handler="groups-wrapper">Group</a></li>
@@ -76,19 +75,19 @@
             <!----GROUP PATIENTS START-->
             <section class="groups-wrapper">
                 <nav>
-                    <div data-handler="physio1-shedule" class="physio-link" id="physio1">
+                    <div data-handler="physio1" class="physio-link">
                         <h1>Marko</h1>
                     </div>
-                    <div data-handler="physio2-shedule" class="physio-link" id="physio2">
+                    <div data-handler="physio2" class="physio-link">
                         <h1>Stefan</h1>
                     </div>
                 </nav>
                 <section class="groups-shedule">
-                    <div class="physio1-shedule active">
+                    <div id="physio1" class="physio-shedule active">
                         <ul class="time">
-                            <li><span>19:00</span></li>
-                            <li><span>20:00</span></li>
-                            <li><span>21:00</span></li>
+                            <li class="time-19h"><span>19:00</span></li>
+                            <li class="time-20h"><span>20:00</span></li>
+                            <li class="time-21h"><span>21:00</span></li>
                         </ul>
                         <ul class="day">
                             <li>
@@ -98,38 +97,29 @@
                                 <h2>WED</h2>
                             </li>
                         </ul>
+                        <ul class="mon-19 events">
+                            <button><i class="fas fa-plus-circle"></i></button>
+                            <!-- <li>
+                                <h2>Patients name</h2>
+                            </li> -->
+                        </ul>
+                        <ul class="mon-20 events">
+                            <button><i class="fas fa-plus-circle"></i></button>
+                        </ul>
                         <ul class="mon-21 events">
                             <button><i class="fas fa-plus-circle"></i></button>
-                            <li>
-                                <h2>Gordana</h2>
-                            </li>
-                            <li>
-                                <h2>Dejan</h2>
-                            </li>
-                            <li>
-                                <h2>Slavica</h2>
-                            </li>
-                            <li>
-                                <h2>Svjetlana</h2>
-                            </li>
                         </ul>
                         <ul class="wed-19 events">
                             <button><i class="fas fa-plus-circle"></i></button>
-                            <li>
-                                <h2>Gordana</h2>
-                            </li>
-                            <li>
-                                <h2>Dejan</h2>
-                            </li>
-                            <li>
-                                <h2>Slavica</h2>
-                            </li>
-                            <li>
-                                <h2>Svjetlana</h2>
-                            </li>
+                        </ul>
+                        <ul class="wed-20 events">
+                            <button><i class="fas fa-plus-circle"></i></button>
+                        </ul>
+                        <ul class="wed-21 events">
+                            <button><i class="fas fa-plus-circle"></i></button>
                         </ul>
                     </div>
-                    <div class="physio2-shedule">
+                    <div id="physio2" class="physio-shedule">
                         <ul class="time">
                             <li><span>19:00</span></li>
                             <li><span>20:00</span></li>
@@ -144,63 +134,18 @@
                         </ul>
                         <ul class="mon-thr-19 events">
                             <button><i class="fas fa-plus-circle"></i></button>
-                            <li>
-                                <h2>Gordana</h2>
-                            </li>
-                            <li>
-                                <h2>Dejan</h2>
-                            </li>
-                            <li>
-                                <h2>Slavica</h2>
-                            </li>
-                            <li>
-                                <h2>Svjetlana</h2>
-                            </li>
+                            <!-- <li>
+                                <h2>Patients name</h2>
+                            </li> -->
                         </ul>
                         <ul class="mon-thr-20 events">
                             <button><i class="fas fa-plus-circle"></i></button>
-                            <li>
-                                <h2>Goca</h2>
-                            </li>
-                            <li>
-                                <h2>Maja</h2>
-                            </li>
-                            <li>
-                                <h2>Bojana</h2>
-                            </li>
-                            <li>
-                                <h2>Dragana</h2>
-                            </li>
                         </ul>
                         <ul class="thu-fri-19 events">
                             <button><i class="fas fa-plus-circle"></i></button>
-                            <li>
-                                <h2>Nives</h2>
-                            </li>
-                            <li>
-                                <h2>Zana</h2>
-                            </li>
-                            <li>
-                                <h2>Natasa</h2>
-                            </li>
-                            <li>
-                                <h2>Smiljka</h2>
-                            </li>
                         </ul>
                         <ul class="thu-fri-20 events">
                             <button><i class="fas fa-plus-circle"></i></button>
-                            <li>
-                                <h2>Seka</h2>
-                            </li>
-                            <li>
-                                <h2>Brana</h2>
-                            </li>
-                            <li>
-                                <h2>Jelena</h2>
-                            </li>
-                            <li>
-                                <h2>Ljilja</h2>
-                            </li>
                         </ul>
                     </div>
                 </section>
@@ -208,7 +153,7 @@
             <!----GROUP PATIENTS END-->
         </main>
     </section>
-    <script src="../assets/scripts/UI/PageRender.js"></script>
+
 </body>
 
 </html>

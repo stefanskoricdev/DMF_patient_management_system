@@ -2,30 +2,18 @@
         .main-nav{
             width: 20rem;
             height: 100vh;
+            min-height: 100rem;
             background-color: $dark-blue;
             border-radius: 0 0 2rem 0;
             box-shadow: 0px 5px 10px $dark-blue;
             position: relative;
             .logo-wrapper{
-                height: 10rem;
-                padding: 1rem 0;
-                .logo{
-                    border-radius: 100%;
-                    height: 8rem;
-                    width: 8rem;
-                    margin: 1rem auto;
-                    border: 3px solid $orange;
+                height: 20rem;
+                width: 20rem;
                     a{
-                        font-size: 2rem;
-                        color: $orange;
-                        font-weight: 600;
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        display: block;
                     }
-                }
+                
             }
             /*---------LOGO END------------------*/
             .main-list{
@@ -44,7 +32,7 @@
                     -o-transition: color 200ms linear;
                     transition: color 200ms linear; 
                 }
-                li, .patients{
+                li{
                     margin-top: 2rem;
                     padding-left: .5rem;
                     
@@ -53,26 +41,28 @@
                     svg, a{
                         color: $orange;
                     }
+                }
+                .patients-link{
                     ul{
                         padding-left: 1rem;
+                        li{
+                            display: none;
+                        }
+                        li.active{
+                            display: block;
+                        }
+                        li.active:hover{
+                            svg, a{
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+                .patients-link:hover{
+                    ul{
                         svg, a{
                             color: $whiteish;
                         }
-                    }
-                }
-                .patients{
-                    li{
-                        display: none;
-                    }
-                    li:hover{
-                        svg, a{
-                            color: $orange;
-                        }
-                    }
-                }
-                .patients:hover{
-                    li{
-                        display: block;
                     }
                 }
             }

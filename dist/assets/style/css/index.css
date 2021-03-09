@@ -22,29 +22,17 @@
     * body .main-nav {
       width: 20rem;
       height: 100vh;
+      min-height: 100rem;
       background-color: #202a3a;
       border-radius: 0 0 2rem 0;
       box-shadow: 0px 5px 10px #202a3a;
       position: relative;
       /*---------LOGO END------------------*/ }
       * body .main-nav .logo-wrapper {
-        height: 10rem;
-        padding: 1rem 0; }
-        * body .main-nav .logo-wrapper .logo {
-          border-radius: 100%;
-          height: 8rem;
-          width: 8rem;
-          margin: 1rem auto;
-          border: 3px solid #f2780a; }
-          * body .main-nav .logo-wrapper .logo a {
-            font-size: 2rem;
-            color: #f2780a;
-            font-weight: 600;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center; }
+        height: 20rem;
+        width: 20rem; }
+        * body .main-nav .logo-wrapper a {
+          display: block; }
       * body .main-nav .main-list {
         height: 30rem; }
         * body .main-nav .main-list a {
@@ -59,21 +47,21 @@
           -ms-transition: color 200ms linear;
           -o-transition: color 200ms linear;
           transition: color 200ms linear; }
-        * body .main-nav .main-list li, * body .main-nav .main-list .patients {
+        * body .main-nav .main-list li {
           margin-top: 2rem;
           padding-left: .5rem; }
         * body .main-nav .main-list li:hover svg, * body .main-nav .main-list li:hover a {
           color: #f2780a; }
-        * body .main-nav .main-list li:hover ul {
+        * body .main-nav .main-list .patients-link ul {
           padding-left: 1rem; }
-          * body .main-nav .main-list li:hover ul svg, * body .main-nav .main-list li:hover ul a {
-            color: #f1ebee; }
-        * body .main-nav .main-list .patients li {
-          display: none; }
-        * body .main-nav .main-list .patients li:hover svg, * body .main-nav .main-list .patients li:hover a {
-          color: #f2780a; }
-        * body .main-nav .main-list .patients:hover li {
-          display: block; }
+          * body .main-nav .main-list .patients-link ul li {
+            display: none; }
+          * body .main-nav .main-list .patients-link ul li.active {
+            display: block; }
+          * body .main-nav .main-list .patients-link ul li.active:hover svg, * body .main-nav .main-list .patients-link ul li.active:hover a {
+            color: #f2780a; }
+        * body .main-nav .main-list .patients-link:hover ul svg, * body .main-nav .main-list .patients-link:hover ul a {
+          color: #f1ebee; }
       * body .main-nav .log-out {
         position: absolute;
         left: 3rem;
@@ -98,7 +86,9 @@
           cursor: pointer;
           color: #f2780a; }
     * body .main-wrapper {
-      width: 100%; }
+      width: 100%;
+      height: 100vh;
+      min-height: 100rem; }
       * body .main-wrapper header {
         height: 10rem;
         background-color: #202a3a;
@@ -123,9 +113,10 @@
             * body .main-wrapper header .user .user-logo svg {
               font-size: 5rem; }
       * body .main-wrapper main {
-        height: calc(100vh - 10rem); }
+        height: calc(100% - 10rem); }
         * body .main-wrapper main .dashboard-wrapper.active {
-          display: block; }
+          display: block;
+          height: 100%; }
           * body .main-wrapper main .dashboard-wrapper.active h1 {
             font-size: 6rem;
             text-align: center;
@@ -197,7 +188,8 @@
           display: none; }
         * body .main-wrapper main .groups-wrapper.active {
           display: block;
-          height: calc(100vh - 10rem); }
+          height: calc(100vh - 10rem);
+          overflow-y: scroll; }
           * body .main-wrapper main .groups-wrapper.active nav {
             width: 98%;
             height: 5rem;
@@ -222,10 +214,10 @@
             * body .main-wrapper main .groups-wrapper.active nav div:hover {
               color: #f2780a; }
           * body .main-wrapper main .groups-wrapper.active .groups-shedule {
-            height: 80rem;
-            overflow-y: scroll; }
+            height: 100%; }
             * body .main-wrapper main .groups-wrapper.active .groups-shedule .events {
               width: 35rem;
+              height: 35rem;
               margin: 0 auto;
               padding: 2rem;
               display: flex;
@@ -257,97 +249,97 @@
                 cursor: pointer; }
               * body .main-wrapper main .groups-wrapper.active .groups-shedule .events li:hover {
                 color: #f2780a; }
-            * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active {
+            * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio-shedule.active {
               height: 100%;
-              display: grid;
               padding: 1rem;
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: 10rem 1fr 1fr 1fr;
-              column-gap: 1rem;
-              row-gap: 1rem; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active .time {
-                grid-column-end: 1;
+              grid-template-columns: 10rem auto auto;
+              grid-template-rows: 10rem auto;
+              row-gap: 3rem; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio-shedule.active .time {
+                grid-column-end: 2;
                 grid-row-start: 2;
-                grid-row-end: 4; }
-                * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active .time li {
-                  height: 50%;
+                grid-row-end: 5; }
+                * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio-shedule.active .time li {
+                  height: 39rem;
+                  padding-top: 3rem;
                   font-size: 3rem;
                   font-weight: 600; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active .day {
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio-shedule.active .day {
                 display: flex;
                 align-items: center;
-                grid-column-start: 1;
+                grid-column-start: 2;
                 grid-column-end: 4;
-                grid-row-start: 1;
                 grid-row-end: 2; }
-                * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active .day li {
+                * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio-shedule.active .day li {
                   width: 50%;
                   text-align: center; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active .mon-21 {
-                grid-column-start: 1;
-                grid-column-end: 2;
+            * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active {
+              display: grid; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active .mon-19 {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                background-color: #5f79a9; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active .mon-20 {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                background-color: #202a3a; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active .mon-21 {
+                grid-column-start: 2;
+                grid-column-end: 3;
                 grid-row-start: 4;
                 grid-row-end: 5;
                 background-color: #5f79a9; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule.active .wed-19 {
-                grid-column-start: 2;
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active .wed-19 {
+                grid-column-start: 3;
                 grid-column-end: 4;
                 grid-row-start: 2;
                 grid-row-end: 3;
                 background-color: #202a3a; }
-            * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio1-shedule {
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active .wed-20 {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                background-color: #5f79a9; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1.active .wed-21 {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 4;
+                grid-row-end: 5;
+                background-color: #202a3a; }
+            * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio1 {
               display: none; }
-            * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active {
-              height: 100%;
-              display: grid;
-              padding: 1rem;
-              grid-template-columns: 1fr 1fr;
-              grid-template-rows: 10rem 1fr 1fr;
-              column-gap: 1rem;
-              row-gap: 1rem; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .time {
-                grid-column-end: 1;
-                grid-row-start: 2;
-                grid-row-end: 4; }
-                * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .time li {
-                  height: 50%;
-                  font-size: 3rem;
-                  font-weight: 600; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .day {
-                display: flex;
-                align-items: center;
-                grid-column-start: 1;
-                grid-column-end: 3;
-                grid-row-start: 1;
-                grid-row-end: 2; }
-                * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .day li {
-                  width: 50%;
-                  text-align: center; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .mon-thr-19 {
-                grid-column-start: 1;
-                grid-column-end: 2;
-                grid-row-start: 2;
-                grid-row-end: 3;
-                background-color: #5f79a9; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .mon-thr-20 {
-                grid-column-start: 1;
-                grid-column-end: 2;
-                grid-row-start: 3;
-                grid-row-end: 4;
-                background-color: #202a3a; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .thu-fri-19 {
+            * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio2.active {
+              display: grid; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio2.active .mon-thr-19 {
                 grid-column-start: 2;
                 grid-column-end: 3;
                 grid-row-start: 2;
                 grid-row-end: 3;
-                background-color: #202a3a; }
-              * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule.active .thu-fri-20 {
+                background-color: #5f79a9; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio2.active .mon-thr-20 {
                 grid-column-start: 2;
                 grid-column-end: 3;
                 grid-row-start: 3;
                 grid-row-end: 4;
+                background-color: #202a3a; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio2.active .thu-fri-19 {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                background-color: #202a3a; }
+              * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio2.active .thu-fri-20 {
+                grid-column-start: 3;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 4;
                 background-color: #5f79a9; }
-            * body .main-wrapper main .groups-wrapper.active .groups-shedule .physio2-shedule {
+            * body .main-wrapper main .groups-wrapper.active .groups-shedule #physio2 {
               display: none; }
         * body .main-wrapper main .groups-wrapper {
           display: none; }
