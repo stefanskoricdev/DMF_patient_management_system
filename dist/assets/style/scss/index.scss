@@ -44,7 +44,8 @@
                 height: calc(100% - 10rem);
                 @import "components/dashboard";
                 @import "components/patients";
-                @import "components/groups";
+                @import "components/groups/groups-main";
+                @import "components/individual/individual-main";
             }
         }
     }

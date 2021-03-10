@@ -1,0 +1,21 @@
+.patients-shedule{
+    .physio-shedule.active{
+        width: 100%;
+        height: 70rem;
+    }
+    .physio1.active{
+        display: block;
+        background-color: red;
+    }
+    .physio2.active{
+        display: block;
+        background-color: green;
+    }
+    .physio3.active{
+        display: block;
+        background-color: blue;
+    }
+    .physio-shedule{
+        display: none;
+    }
+}

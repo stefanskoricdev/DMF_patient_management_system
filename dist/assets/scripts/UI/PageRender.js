@@ -6,10 +6,16 @@ class PageRender {
     this.main = document.querySelector("main");
     this.mainSections = this.main.querySelectorAll("section");
     this.groupRenderHandler = document.querySelector(".group-patients");
-    this.groupsNavLinks = document.querySelectorAll(".physio-link");
-    this.groupsShedule = document.querySelector(".groups-shedule");
-    this.groupsSheduleArea = this.groupsShedule.querySelectorAll("div");
-
+    this.groupsNavLinks = document.querySelectorAll(
+      ".groups-wrapper .physio-link"
+    );
+    this.individualRenderHandler = document.querySelector(
+      ".individual-patients"
+    );
+    this.individualNavLinks = document.querySelectorAll(
+      ".individual-wrapper .physio-link"
+    );
+    //EVENT LISTENERS
     this.navLinks.forEach((link) => {
       link.addEventListener("click", this.pageRender.bind(this));
     });
@@ -18,7 +24,14 @@ class PageRender {
       this.pageRender.bind(this)
     );
     this.groupsNavLinks.forEach((link) => {
-      link.addEventListener("click", this.groupsSheduleRender.bind(this));
+      link.addEventListener("click", this.sheduleRender.bind(this));
+    });
+    this.individualRenderHandler.addEventListener(
+      "click",
+      this.pageRender.bind(this)
+    );
+    this.individualNavLinks.forEach((link) => {
+      link.addEventListener("click", this.sheduleRender.bind(this));
     });
     this.patientsLink.addEventListener("click", (e) => {
       const lists = e.currentTarget.querySelectorAll("li");
@@ -37,15 +50,25 @@ class PageRender {
     });
     targetSection.classList.add("active");
   } // Renders between main pages
-  groupsSheduleRender(event) {
+  sheduleRender(event) {
     const target = event.currentTarget;
+    target.classList.add("active");
+    const targetSiblings = target.parentNode.children;
+    for (const sibling of targetSiblings) {
+      if (!sibling.contains(target)) {
+        sibling.classList.remove("active");
+      }
+    }
     const handler = target.dataset.handler;
-    const targetSection = document.getElementById(handler);
-    console.log(handler);
-    this.groupsSheduleArea.forEach((area) => {
+    const targetSection = target.closest("section");
+    const targetShedule = targetSection.querySelector("." + handler);
+    const sheduleArea = targetShedule
+      .closest(".patients-shedule")
+      .querySelectorAll("div");
+    sheduleArea.forEach((area) => {
       area.classList.remove("active");
     });
-    targetSection.classList.add("active");
+    targetShedule.classList.add("active");
   } //Rendering content inside patients > groups page (between physios)
 }
 

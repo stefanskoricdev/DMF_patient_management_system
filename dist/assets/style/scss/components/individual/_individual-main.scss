@@ -1,0 +1,10 @@
+.individual-wrapper.active{
+    display: block;
+    height: calc(100vh - 10rem);
+    overflow-y: scroll;
+    @import "../groups/shedule-nav";
+    @import "individual-shedule";
+}
+.individual-wrapper{
+    display: none;
+}
