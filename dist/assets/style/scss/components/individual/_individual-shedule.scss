@@ -1,19 +1,56 @@
 .patients-shedule{
+    width: 100%;
     .physio-shedule.active{
         width: 100%;
         height: 70rem;
+        overflow-y: scroll;
+        ul{
+            h2{
+                font-size: 3rem;
+                height: 5rem;
+                padding: 1rem;
+                text-align: center;
+                border-bottom: 3px solid $dark-blue;
+            }
+            li{
+                height: 5rem;
+                font-size: 2rem;
+                font-weight: 600; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid $dark-blue;
+                border-right: 1px solid $dark-blue;
+                cursor: pointer;
+            }
+            li:hover{
+                background-color: $light-blue;
+            }
+        }
+        .time{
+            li{
+                font-size: 3rem;
+            }
+        }
+        .days{
+            width: 100%;
+            display: flex;
+            ul{
+                width: 20%;
+                li{
+                    width: 100%;
+                }
+            }
+        }
     }
     .physio1.active{
-        display: block;
-        background-color: red;
+        display: flex;
     }
     .physio2.active{
-        display: block;
-        background-color: green;
+        display: flex;
     }
     .physio3.active{
-        display: block;
-        background-color: blue;
+        display: flex;
     }
     .physio-shedule{
         display: none;

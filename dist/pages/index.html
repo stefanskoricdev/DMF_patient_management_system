@@ -8,7 +8,7 @@
     <title>DMF Patient Management System</title>
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/style/css/index.css">
-    <script src="../assets/scripts/UI/PageRender.js" defer></script>
+    <script src="../../src/scripts/UI/PageRender.js" defer></script>
 </head>
 
 <body>
@@ -42,7 +42,8 @@
         </header>
         <main>
             <!----DASHBOARD START-->
-            <section class="dashboard-wrapper active">
+            <section class="dashboard-wrapper">
+                <h1>Dashboard</h1>
                 <h1>Welcome Admin</h1>
                 <section class="stats">
                     <div class="patients-stat box">
@@ -152,7 +153,7 @@
             </section>
             <!----GROUP PATIENTS END-->
             <!----INDIVIDUAL PATIENTS START-->
-            <section class="individual-wrapper">
+            <section class="individual-wrapper active">
                 <nav>
                     <div data-handler="physio1" class="physio-link active">
                         <h1>Marko</h1>
@@ -165,9 +166,286 @@
                     </div>
                 </nav>
                 <section class="patients-shedule">
-                    <div class="physio1 physio-shedule active"></div>
-                    <div class="physio2 physio-shedule"></div>
-                    <div class="physio3 physio-shedule"></div>
+                    <div class="physio1 physio-shedule active">
+                        <ul class="time">
+                            <h2>Time</h2>
+                            <li class="time-09h"><span>09:00</span></li>
+                            <li class="time-10h"><span>10:00</span></li>
+                            <li class="time-11h"><span>11:00</span></li>
+                            <li class="time-12h"><span>12:00</span></li>
+                            <li class="time-13h"><span>13:00</span></li>
+                            <li class="time-14h"><span>14:00</span></li>
+                            <li class="time-15h"><span>15:00</span></li>
+                            <li class="time-16h"><span>16:00</span></li>
+                            <li class="time-17h"><span>17:00</span></li>
+                            <li class="time-18h"><span>18:00</span></li>
+                            <li class="time-19h"><span>19:00</span></li>
+                            <li class="time-20h"><span>20:00</span></li>
+                        </ul>
+                        <section class="days">
+                            <ul class="day mon">
+                                <h2>MON</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day tue">
+                                <h2>TUE</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day wed">
+                                <h2>WED</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day thu">
+                                <h2>THU</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day fri">
+                                <h2>FRI</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="physio2 physio-shedule">
+                        <ul class="time">
+                            <h2>Time</h2>
+                            <li class="time-09h"><span>09:00</span></li>
+                            <li class="time-10h"><span>10:00</span></li>
+                            <li class="time-11h"><span>11:00</span></li>
+                            <li class="time-12h"><span>12:00</span></li>
+                            <li class="time-13h"><span>13:00</span></li>
+                            <li class="time-14h"><span>14:00</span></li>
+                            <li class="time-15h"><span>15:00</span></li>
+                            <li class="time-16h"><span>16:00</span></li>
+                            <li class="time-17h"><span>17:00</span></li>
+                            <li class="time-18h"><span>18:00</span></li>
+                            <li class="time-19h"><span>19:00</span></li>
+                            <li class="time-20h"><span>20:00</span></li>
+                        </ul>
+                        <section class="days">
+                            <ul class="day mon">
+                                <h2>MON</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day tue">
+                                <h2>TUE</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day wed">
+                                <h2>WED</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day thu">
+                                <h2>THU</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day fri">
+                                <h2>FRI</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                    </div>
+                    <div class="physio3 physio-shedule">
+                        <ul class="time">
+                            <h2>Time</h2>
+                            <li class="time-09h"><span>09:00</span></li>
+                            <li class="time-10h"><span>10:00</span></li>
+                            <li class="time-11h"><span>11:00</span></li>
+                            <li class="time-12h"><span>12:00</span></li>
+                            <li class="time-13h"><span>13:00</span></li>
+                            <li class="time-14h"><span>14:00</span></li>
+                            <li class="time-15h"><span>15:00</span></li>
+                            <li class="time-16h"><span>16:00</span></li>
+                            <li class="time-17h"><span>17:00</span></li>
+                            <li class="time-18h"><span>18:00</span></li>
+                            <li class="time-19h"><span>19:00</span></li>
+                            <li class="time-20h"><span>20:00</span></li>
+                        </ul>
+                        <section class="days">
+                            <ul class="day mon">
+                                <h2>MON</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day tue">
+                                <h2>TUE</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day wed">
+                                <h2>WED</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day thu">
+                                <h2>THU</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <ul class="day fri">
+                                <h2>FRI</h2>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                    </div>
                 </section>
             </section>
             <!----INDIVIDUAL PATIENTS END-->

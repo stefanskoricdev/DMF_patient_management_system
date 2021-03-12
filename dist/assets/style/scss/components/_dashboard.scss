@@ -2,11 +2,11 @@
                 .dashboard-wrapper.active {
                     display: block;
                     height: 100%;
+                    margin-left: 2rem;
                     h1 {
-                        font-size: 6rem;
-                        text-align: center;
+                        font-size: 4rem;
                         padding-top: 2rem;
-                        color: $dark-blue;
+                        color: $orange;
                     }
 
                     .stats {
