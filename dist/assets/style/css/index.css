@@ -15,10 +15,82 @@
     list-style: none; }
   * button:focus {
     outline: none; }
+  * input:focus {
+    outline: none; }
   * body {
     box-sizing: border-box;
     display: flex;
-    background-color: #f1ebee; }
+    background-color: #f1ebee;
+    position: relative; }
+    * body .add-patient-modal {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      * body .add-patient-modal .backdrop {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(32, 42, 58, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1; }
+        * body .add-patient-modal .backdrop form {
+          width: 50rem;
+          height: 70rem;
+          background-color: #202a3a;
+          border-radius: 2rem;
+          font-size: 5rem;
+          color: #f1ebee;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          box-shadow: 2rem 2rem 2rem #202a3a; }
+          * body .add-patient-modal .backdrop form #close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 2rem; }
+            * body .add-patient-modal .backdrop form #close-modal .fa-times {
+              font-size: 4rem;
+              color: #f2780a;
+              cursor: pointer; }
+          * body .add-patient-modal .backdrop form .gender-pick, * body .add-patient-modal .backdrop form .patient-type-pick {
+            border: 1px solid #f1ebee;
+            padding: 2rem;
+            border-radius: 2rem;
+            margin: 2rem 0; }
+          * body .add-patient-modal .backdrop form input {
+            margin: 1rem 1rem;
+            background-color: #f1ebee;
+            border-radius: 1rem;
+            border: none; }
+          * body .add-patient-modal .backdrop form input[type='submit'] {
+            font-size: 2rem;
+            font-weight: 600;
+            width: 15rem;
+            height: 4rem;
+            border-radius: 2.5rem;
+            border: 1px solid #f1ebee;
+            background-color: #202a3a;
+            color: #f1ebee;
+            cursor: pointer;
+            -webkit-transition: color 200ms linear;
+            -moz-transition: color 200ms linear;
+            -ms-transition: color 200ms linear;
+            -o-transition: color 200ms linear;
+            transition: color 200ms linear; }
+          * body .add-patient-modal .backdrop form input[type='submit']:hover {
+            border: 1px solid #202a3a;
+            background-color: #f1ebee;
+            color: #202a3a; }
+          * body .add-patient-modal .backdrop form label svg {
+            margin: 0 .5rem;
+            color: #f2780a; }
     * body .main-nav {
       width: 20rem;
       height: 100vh;
@@ -60,6 +132,11 @@
             display: block; }
           * body .main-nav .main-list .patients-link ul li.active:hover svg, * body .main-nav .main-list .patients-link ul li.active:hover a {
             color: #f2780a; }
+        * body .main-nav .main-list .patients-link .fa-chevron-down {
+          margin-left: .5rem; }
+        * body .main-nav .main-list .patients-link .fa-chevron-down.active {
+          margin-left: .5rem;
+          transform: rotate(180deg); }
         * body .main-nav .main-list .patients-link:hover ul svg, * body .main-nav .main-list .patients-link:hover ul a {
           color: #f1ebee; }
       * body .main-nav .log-out {
@@ -388,28 +465,49 @@
                 height: 5rem;
                 padding: 1rem;
                 text-align: center;
-                border-bottom: 3px solid #202a3a; }
+                border-bottom: 0.3rem solid #202a3a; }
               * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active ul li {
                 height: 5rem;
+                margin: .5rem;
                 font-size: 2rem;
                 font-weight: 600;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-bottom: 1px solid #202a3a;
-                border-right: 1px solid #202a3a;
-                cursor: pointer; }
-              * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active ul li:hover {
-                background-color: #5f79a9; }
+                border-bottom: 0.1rem solid #202a3a;
+                border-right: 0.1rem solid #202a3a;
+                border-radius: 1rem;
+                cursor: pointer;
+                box-shadow: 0.2rem 0.2rem 1rem #202a3a;
+                -webkit-transition: background 200ms linear;
+                -moz-transition: background 200ms linear;
+                -ms-transition: background 200ms linear;
+                -o-transition: background 200ms linear;
+                transition: background 200ms linear; }
               * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .time li {
-                font-size: 3rem; }
+                font-size: 3rem;
+                background: #f2780a; }
               * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days {
                 width: 100%;
                 display: flex; }
                 * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul {
                   width: 20%; }
                   * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul li {
-                    width: 100%; }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; }
+                    * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul li h2 {
+                      display: none;
+                      border-bottom: none; }
+                  * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul li:hover {
+                    background: #f2780a;
+                    -webkit-transition: background 200ms linear;
+                    -moz-transition: background 200ms linear;
+                    -ms-transition: background 200ms linear;
+                    -o-transition: background 200ms linear;
+                    transition: background 200ms linear; }
+                    * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul li:hover h2 {
+                      display: block; }
             * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio1.active {
               display: flex; }
             * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio2.active {

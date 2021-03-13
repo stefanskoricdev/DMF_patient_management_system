@@ -9,9 +9,38 @@
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/style/css/index.css">
     <script src="../../src/scripts/UI/PageRender.js" defer></script>
+    <script src="../../src/scripts/UI/Modal.js" defer></script>
 </head>
 
 <body>
+    <template id="add-patient-modal-template">
+        <div class="add-patient-modal">
+            <div class="backdrop">
+                <form class="add-patient-form" action="">
+                    <div id="close-modal"><i class="fas fa-times"></i></div>
+                    <label for="name"><i class="fas fa-users"></i>Full Name</label>
+                    <input type="text" name="name" id="patient-name" required>
+                    <div class="gender-pick">
+                        <p>Please select gender</p>
+                        <label for="male"><i class="fas fa-male"></i>Male</label>
+                        <input type="radio" id="male" name="gender" required>
+                        <label for="female"><i class="fas fa-female"></i>Female</label>
+                        <input type="radio" id="female" name="gender" required>
+                    </div>
+                    <div class="patient-type-pick">
+                        <p>Please select type</p>
+                        <label for="individual-type"><i class="fas fa-user-injured"></i>Individual</label>
+                        <input type="radio" id="individual-type" name="patient-type" required>
+                        <label for="group-type"><i class="fas fa-users"></i>Group</label>
+                        <input type="radio" id="group-type" name="patient-type" required>
+                    </div>
+                    <label for="phone"><i class="fas fa-mobile-alt"></i>Phone number</label>
+                    <input type="tel" name="phone" id="patient-contact" required>
+                    <input id="add-patient-btn" type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+    </template>
     <nav class="main-nav">
         <section class="logo-wrapper">
             <a href="index.html"><img src="../assets/img/logo.png" alt="dmg_logo" width="200px" height="200px"></a>
@@ -19,7 +48,7 @@
         <ul class="main-list">
             <li><i class="fas fa-home"></i><a data-handler="dashboard-wrapper">Dashboard</a></li>
             <li class="patients-link"><i class="fas fa-hospital-user"></i><a
-                    data-handler="patients-wrapper">Patients</a>
+                    data-handler="patients-wrapper">Patients</a><i class="fas fa-chevron-down"></i>
                 <ul>
                     <li><i class="fas fa-user-injured"></i><a data-handler="individual-wrapper">Individual</a></li>
                     <li><i class="fas fa-users"></i><a data-handler="groups-wrapper">Group</a></li>
@@ -42,7 +71,7 @@
         </header>
         <main>
             <!----DASHBOARD START-->
-            <section class="dashboard-wrapper">
+            <section class="dashboard-wrapper active">
                 <h1>Dashboard</h1>
                 <h1>Welcome Admin</h1>
                 <section class="stats">
@@ -153,7 +182,7 @@
             </section>
             <!----GROUP PATIENTS END-->
             <!----INDIVIDUAL PATIENTS START-->
-            <section class="individual-wrapper active">
+            <section class="individual-wrapper">
                 <nav>
                     <div data-handler="physio1" class="physio-link active">
                         <h1>Marko</h1>

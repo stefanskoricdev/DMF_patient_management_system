@@ -35,6 +35,8 @@ class PageRender {
     });
     this.patientsLink.addEventListener("click", (e) => {
       const lists = e.currentTarget.querySelectorAll("li");
+      const chevron = this.patientsLink.querySelector(".fa-chevron-down");
+      chevron.classList.toggle("active");
       lists.forEach((list) => {
         list.classList.toggle("active");
       });
@@ -50,6 +52,7 @@ class PageRender {
     });
     targetSection.classList.add("active");
   } // Renders between main pages
+
   sheduleRender(event) {
     const target = event.currentTarget;
     target.classList.add("active");
@@ -69,7 +72,7 @@ class PageRender {
       area.classList.remove("active");
     });
     targetShedule.classList.add("active");
-  } //Rendering content inside patients > groups page (between physios)
+  } //Rendering content inside patients > groups and individuals page (between physios)
 }
 
 new PageRender();

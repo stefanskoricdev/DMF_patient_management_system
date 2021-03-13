@@ -57,6 +57,13 @@
                             }
                         }
                     }
+                    .fa-chevron-down{
+                        margin-left: .5rem;
+                    }
+                    .fa-chevron-down.active{
+                        margin-left: .5rem;
+                        transform: rotate(180deg);
+                    }
                 }
                 .patients-link:hover{
                     ul{

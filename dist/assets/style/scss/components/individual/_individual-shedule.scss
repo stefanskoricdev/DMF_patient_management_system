@@ -10,26 +10,33 @@
                 height: 5rem;
                 padding: 1rem;
                 text-align: center;
-                border-bottom: 3px solid $dark-blue;
+                border-bottom: .3rem solid $dark-blue;
             }
             li{
                 height: 5rem;
+                margin: .5rem; 
                 font-size: 2rem;
                 font-weight: 600; 
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-bottom: 1px solid $dark-blue;
-                border-right: 1px solid $dark-blue;
+                border-bottom: .1rem solid $dark-blue;
+                border-right: .1rem solid $dark-blue;
+                border-radius: 1rem;
                 cursor: pointer;
+                box-shadow: .2rem .2rem 1rem $dark-blue;
+                -webkit-transition: background 200ms linear;
+                -moz-transition: background 200ms linear;
+                -ms-transition: background 200ms linear;
+                -o-transition: background 200ms linear;
+                transition: background 200ms linear;
             }
-            li:hover{
-                background-color: $light-blue;
-            }
+            
         }
         .time{
             li{
                 font-size: 3rem;
+                background: $orange;
             }
         }
         .days{
@@ -38,7 +45,24 @@
             ul{
                 width: 20%;
                 li{
-                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    h2{
+                        display: none;
+                        border-bottom: none;
+                    }
+                }
+                li:hover{
+                    background: $orange;
+                    -webkit-transition: background 200ms linear;
+                    -moz-transition: background 200ms linear;
+                    -ms-transition: background 200ms linear;
+                    -o-transition: background 200ms linear;
+                    transition: background 200ms linear;
+                    h2{
+                        display: block;
+                    }
                 }
             }
         }
