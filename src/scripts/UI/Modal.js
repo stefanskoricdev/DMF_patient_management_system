@@ -1,4 +1,5 @@
-class Modal {
+import { updateUi } from "./UpdateUi.js";
+export class Modal {
   constructor() {
     this.individualSection = document.querySelector(".individual-wrapper");
     this.individualDaysSection = this.individualSection.querySelectorAll(
@@ -19,6 +20,7 @@ class Modal {
       "close-modal"
     );
     this.modalBackdrop = this.modalElements.querySelector(".backdrop");
+    this.modalInputs = this.modalElements.querySelectorAll("input");
     //EVENT LISTENERS
     for (const lists of this.individualDaysSection) {
       const list = lists.querySelectorAll("li");
@@ -26,7 +28,7 @@ class Modal {
         listEl.addEventListener("click", this.show.bind(this));
       }
     } //Event listeners to all li's inside days section!
-    this.addPatientBtnHandler.addEventListener("click", this.hide.bind(this));
+    //this.addPatientBtnHandler.addEventListener("click", this.hide.bind(this));
     this.closeModalBtnHandler.addEventListener("click", this.hide.bind(this));
     this.modalBackdrop.addEventListener("click", this.hide.bind(this));
   }
@@ -42,13 +44,12 @@ class Modal {
   hide(e) {
     e.stopPropagation();
     if (
-      (e.target === this.addPatientBtnHandler ||
-        e.currentTarget === this.closeModalBtnHandler ||
+      (e.currentTarget === this.closeModalBtnHandler ||
         e.target === this.modalBackdrop) &&
       this.modalElement
     ) {
+      updateUi();
       document.body.removeChild(this.modalElement);
     }
   }
 }
-new Modal();

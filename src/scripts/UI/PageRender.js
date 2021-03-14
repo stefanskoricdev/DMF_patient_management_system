@@ -1,4 +1,4 @@
-class PageRender {
+export class PageRender {
   constructor() {
     this.mainList = document.querySelector(".main-list");
     this.navLinks = this.mainList.querySelectorAll("a");
@@ -33,14 +33,16 @@ class PageRender {
     this.individualNavLinks.forEach((link) => {
       link.addEventListener("click", this.sheduleRender.bind(this));
     });
-    this.patientsLink.addEventListener("click", (e) => {
-      const lists = e.currentTarget.querySelectorAll("li");
-      const chevron = this.patientsLink.querySelector(".fa-chevron-down");
-      chevron.classList.toggle("active");
-      lists.forEach((list) => {
-        list.classList.toggle("active");
-      });
-    }); //Toggles patients link submenu in main nav
+    this.patientsLink.addEventListener("click", this.submenuRender.bind(this)); //Toggles patients link submenu in main nav
+  }
+
+  submenuRender(event) {
+    const lists = event.currentTarget.querySelectorAll("li");
+    const chevron = this.patientsLink.querySelector(".fa-chevron-down");
+    chevron.classList.toggle("active");
+    lists.forEach((list) => {
+      list.classList.toggle("active");
+    });
   }
 
   pageRender(event) {

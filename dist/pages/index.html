@@ -8,8 +8,10 @@
     <title>DMF Patient Management System</title>
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/style/css/index.css">
+    <!-- 
     <script src="../../src/scripts/UI/PageRender.js" defer></script>
-    <script src="../../src/scripts/UI/Modal.js" defer></script>
+    <script src="../../src/scripts/UI/Modal.js" defer></script> -->
+    <script src="../../src/App.js" defer type="module"></script>
 </head>
 
 <body>
@@ -18,21 +20,21 @@
             <div class="backdrop">
                 <form class="add-patient-form" action="">
                     <div id="close-modal"><i class="fas fa-times"></i></div>
-                    <label for="name"><i class="fas fa-users"></i>Full Name</label>
-                    <input type="text" name="name" id="patient-name" required>
+                    <label for="patient-name"><i class="fas fa-users"></i>Full Name</label>
+                    <input type="text" name="patient-name" id="patient-name" required>
                     <div class="gender-pick">
                         <p>Please select gender</p>
                         <label for="male"><i class="fas fa-male"></i>Male</label>
-                        <input type="radio" id="male" name="gender" required>
+                        <input type="radio" id="male" value="male" name="gender" required>
                         <label for="female"><i class="fas fa-female"></i>Female</label>
-                        <input type="radio" id="female" name="gender" required>
+                        <input type="radio" id="female" value="female" name="gender" required>
                     </div>
                     <div class="patient-type-pick">
                         <p>Please select type</p>
                         <label for="individual-type"><i class="fas fa-user-injured"></i>Individual</label>
-                        <input type="radio" id="individual-type" name="patient-type" required>
+                        <input type="radio" id="individual-type" value="individual" name="patient-type" required>
                         <label for="group-type"><i class="fas fa-users"></i>Group</label>
-                        <input type="radio" id="group-type" name="patient-type" required>
+                        <input type="radio" id="group-type" value="group" name="patient-type" required>
                     </div>
                     <label for="phone"><i class="fas fa-mobile-alt"></i>Phone number</label>
                     <input type="tel" name="phone" id="patient-contact" required>
@@ -234,7 +236,7 @@
                                 <li></li>
                                 <li></li>
                                 <li></li>
-                                <li></li>
+                                <li>ASD</li>
                                 <li></li>
                                 <li></li>
                                 <li></li>
