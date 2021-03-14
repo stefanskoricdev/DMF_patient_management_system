@@ -45,7 +45,8 @@ export class Modal {
     e.stopPropagation();
     if (
       (e.currentTarget === this.closeModalBtnHandler ||
-        e.target === this.modalBackdrop) &&
+        e.target === this.modalBackdrop ||
+        e.target === this.addPatientBtnHandler) &&
       this.modalElement
     ) {
       updateUi();

@@ -4,13 +4,10 @@ import { updateUi } from "./UI/UpdateUi.js";
 export class Patients {
   constructor() {
     this.patients = [];
-    const modal = new Modal();
-    this.addPatientBtnHandler = modal.addPatientBtnHandler;
+    this.modal = new Modal();
+    const addPatientBtnHandler = this.modal.addPatientBtnHandler;
     //EVENT LISTENERS
-    this.addPatientBtnHandler.addEventListener(
-      "click",
-      this.addPatient.bind(this)
-    );
+    addPatientBtnHandler.addEventListener("click", this.addPatient.bind(this));
   }
 
   addPatient(event) {
@@ -39,6 +36,7 @@ export class Patients {
     };
     this.patients.push(newPatient);
     updateUi();
+    this.modal.hide;
   }
 }
 
