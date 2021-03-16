@@ -5,6 +5,8 @@ export class Modal {
     this.individualDaysSection = this.individualSection.querySelectorAll(
       ".day"
     );
+    this.groupsSection = document.querySelector(".groups-wrapper");
+    this.groupsSectionEvents = document.querySelectorAll(".events");
     this.modalTemplateEl = document.getElementById(
       "add-patient-modal-template"
     );
@@ -28,14 +30,21 @@ export class Modal {
         listEl.addEventListener("click", this.show.bind(this));
       }
     } //Event listeners to all li's inside days section!
-    //this.addPatientBtnHandler.addEventListener("click", this.hide.bind(this));
+    for (const event of this.groupsSectionEvents) {
+      const list = event.querySelectorAll("li");
+      for (const listEl of list) {
+        listEl.addEventListener("click", this.show.bind(this));
+      }
+    }
     this.closeModalBtnHandler.addEventListener("click", this.hide.bind(this));
     this.modalBackdrop.addEventListener("click", this.hide.bind(this));
   }
 
-  show() {
+  show(e) {
+    this.targetedList = e.currentTarget;
     if ("content" in document.createElement("template")) {
       document.body.insertAdjacentElement("afterbegin", this.modalElement);
+      this.hide.bind(this);
     } else {
       throw new Error("Please use newer version browser");
     }

@@ -12,31 +12,36 @@
         border-radius: 1rem;
         box-shadow: 0px 5px 10px $dark-blue;
         position: relative;
-        button{
-            width: 5rem;
-            height: 5rem;
-            color: $whiteish;
-            background-color: inherit;
-            border-radius: 100%;
-            font-size: 4rem;
-            border: none;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            cursor: pointer;
-        }
         li{
-            color: $whiteish;
-            -webkit-transition: color 200ms linear;
-            -moz-transition: color 200ms linear;
-            -ms-transition: color 200ms linear;
-            -o-transition: color 200ms linear;
-            transition: color 200ms linear; 
+            height: 5rem;
+            width: 30rem;
+            margin: 1.5rem auto;
+            font-size: 2.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 1.5rem;
+            background-color: $whiteish;
+            color: $dark-blue;
+            -webkit-transition: background-color 200ms linear;
+            -moz-transition: background-color 200ms linear;
+            -ms-transition: background-color 200ms linear;
+            -o-transition: background-color 200ms linear;
+            transition: background-color 200ms linear; 
             cursor: pointer;
+            content: '';
         }
         li:hover{
-            color: $orange;
+            background-color: $orange;
+            -webkit-transition: background-color 200ms linear;
+            -moz-transition: background-color 200ms linear;
+            -ms-transition: background-color 200ms linear;
+            -o-transition: background-color 200ms linear;
+            transition: background-color 200ms linear;
         }
+        
     }
     .physio-shedule.active{
         height: 100%;
@@ -88,7 +93,7 @@
             grid-column-end: 3;
             grid-row-start: 4;
             grid-row-end: 5;
-            background-color: $light-blue;
+            background-color: $light-blue; 
         }
         .wed-19{
             grid-column-start: 3;
@@ -102,7 +107,7 @@
             grid-column-end: 4;
             grid-row-start: 3;
             grid-row-end: 4;
-            background-color: $light-blue;
+            background-color: $light-blue; 
         }
         .wed-21{
             grid-column-start: 3;
@@ -122,7 +127,7 @@
             grid-column-end: 3;
             grid-row-start: 2;
             grid-row-end: 3;
-            background-color: $light-blue;
+            background-color: $light-blue; 
         }
         .mon-thr-20{
             grid-column-start: 2;
@@ -143,7 +148,7 @@
             grid-column-end: 4;
             grid-row-start: 3;
             grid-row-end: 4;
-            background-color: $light-blue;
+            background-color: $light-blue; 
         }
     }
     .physio2{

@@ -28,6 +28,7 @@ export class Patients {
       }
     });
     const patientContact = document.getElementById("patient-contact");
+    const targetedList = this.modal.targetedList;
     const newPatient = {
       name: patientName.value,
       gender: patientGenderValue[0],
@@ -35,8 +36,10 @@ export class Patients {
       contact: patientContact.value,
     };
     this.patients.push(newPatient);
+    targetedList.textContent = `${newPatient.name}`;
     updateUi();
     this.modal.hide;
+    console.log(this.patients);
   }
 }
 

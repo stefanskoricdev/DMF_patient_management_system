@@ -45,13 +45,11 @@
             ul{
                 width: 20%;
                 li{
+                    font-size: 2rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    h2{
-                        display: none;
-                        border-bottom: none;
-                    }
+                    text-align: center;
                 }
                 li:hover{
                     background: $orange;
@@ -60,9 +58,6 @@
                     -ms-transition: background 200ms linear;
                     -o-transition: background 200ms linear;
                     transition: background 200ms linear;
-                    h2{
-                        display: block;
-                    }
                 }
             }
         }
