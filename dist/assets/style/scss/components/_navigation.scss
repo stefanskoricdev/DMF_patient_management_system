@@ -1,103 +1,127 @@
+.main-nav {
+    width: 20rem;
+    height: 100vh;
+    min-height: 100rem;
+    background-color: $dark-blue;
+    border-radius: 0 0 2rem 0;
+    box-shadow: 0px 5px 10px $dark-blue;
+    position: relative;
 
-        .main-nav{
-            width: 20rem;
-            height: 100vh;
-            min-height: 100rem;
-            background-color: $dark-blue;
-            border-radius: 0 0 2rem 0;
-            box-shadow: 0px 5px 10px $dark-blue;
-            position: relative;
-            .logo-wrapper{
-                height: 20rem;
-                width: 20rem;
-                    a{
-                        display: block;
-                    }
-                
+    .logo-wrapper {
+        height: 20rem;
+        width: 20rem;
+
+        a {
+            display: block;
+        }
+
+    }
+
+    /*---------LOGO END------------------*/
+    .main-list {
+        height: 30rem;
+
+        a {
+            font-weight: 600;
+            margin-left: .5rem;
+            cursor: pointer;
+        }
+
+        a,
+        svg {
+            font-size: 2rem;
+            color: $whiteish;
+            -webkit-transition: color 200ms linear;
+            -moz-transition: color 200ms linear;
+            -ms-transition: color 200ms linear;
+            -o-transition: color 200ms linear;
+            transition: color 200ms linear;
+        }
+
+        li {
+            margin-top: 2rem;
+            padding-left: .5rem;
+
+        }
+
+        li:hover {
+
+            svg,
+            a {
+                color: $orange;
             }
-            /*---------LOGO END------------------*/
-            .main-list{
-                height: 30rem;
-                a{
-                    font-weight: 600;
-                    margin-left: .5rem;
-                    cursor: pointer;
+        }
+
+        .patients-link {
+            ul {
+                padding-left: 1rem;
+
+                li {
+                    display: none;
                 }
-                a, svg{
-                    font-size: 2rem;
-                    color: $whiteish;
-                    -webkit-transition: color 200ms linear;
-                    -moz-transition: color 200ms linear;
-                    -ms-transition: color 200ms linear;
-                    -o-transition: color 200ms linear;
-                    transition: color 200ms linear; 
+
+                li.active {
+                    display: block;
                 }
-                li{
-                    margin-top: 2rem;
-                    padding-left: .5rem;
-                    
-                }
-                li:hover{
-                    svg, a{
+
+                li.active:hover {
+
+                    svg,
+                    a {
                         color: $orange;
                     }
                 }
-                .patients-link{
-                    ul{
-                        padding-left: 1rem;
-                        li{
-                            display: none;
-                        }
-                        li.active{
-                            display: block;
-                        }
-                        li.active:hover{
-                            svg, a{
-                                color: $orange;
-                            }
-                        }
-                    }
-                    .fa-chevron-down{
-                        margin-left: .5rem;
-                    }
-                    .fa-chevron-down.active{
-                        margin-left: .5rem;
-                        transform: rotate(180deg);
-                    }
-                }
-                .patients-link:hover{
-                    ul{
-                        svg, a{
-                            color: $whiteish;
-                        }
-                    }
-                }
             }
-            .log-out{
-                position: absolute;
-                left: 3rem;
-                bottom: 2rem;
-                button{
-                    width: calc(fit-content + 2rem);
-                    height: 2.5rem;
-                    display: flex;
-                    align-items: center;
-                    background-color: inherit;
+
+            .fa-chevron-down {
+                margin-left: .5rem;
+            }
+
+            .fa-chevron-down.active {
+                margin-left: .5rem;
+                transform: rotate(180deg);
+            }
+        }
+
+        .patients-link:hover {
+            ul {
+
+                svg,
+                a {
                     color: $whiteish;
-                    border: none;
-                    font-size: 2rem;
-                    -webkit-transition: color 200ms linear;
-                    -moz-transition: color 200ms linear;
-                    -ms-transition: color 200ms linear;
-                    -o-transition: color 200ms linear;
-                    transition: color 200ms linear;      
-                    svg{
-                        padding: 0 .5rem;
-                    }
-                }
-                button:hover{
-                    cursor: pointer;
-                    color: $orange;
                 }
             }
-        } 
+        }
+    }
+
+    .log-out {
+        position: absolute;
+        left: 3rem;
+        bottom: 2rem;
+
+        button {
+            width: calc(fit-content + 2rem);
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            background-color: inherit;
+            color: $whiteish;
+            border: none;
+            font-size: 2rem;
+            -webkit-transition: color 200ms linear;
+            -moz-transition: color 200ms linear;
+            -ms-transition: color 200ms linear;
+            -o-transition: color 200ms linear;
+            transition: color 200ms linear;
+
+            svg {
+                padding: 0 .5rem;
+            }
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: $orange;
+        }
+    }
+}

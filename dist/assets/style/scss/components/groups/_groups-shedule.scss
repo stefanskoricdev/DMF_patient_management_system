@@ -1,5 +1,6 @@
 .patients-shedule{
-    height: 100%;
+    height: calc(100% - 10rem);
+    overflow-y: scroll;
     .events{
         width: 35rem;
         height: 35rem;
@@ -44,11 +45,11 @@
         
     }
     .physio-shedule.active{
-        height: 100%;
         padding: 1rem;
         grid-template-columns: 10rem auto auto;
         grid-template-rows: 10rem auto;
         row-gap: 3rem;
+        column-gap: 3rem;
         .time{
             grid-column-end: 2;
             grid-row-start: 2;

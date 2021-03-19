@@ -59,7 +59,8 @@
               font-size: 4rem;
               color: #f2780a;
               cursor: pointer; }
-          * body .add-patient-modal .backdrop form .gender-pick, * body .add-patient-modal .backdrop form .patient-type-pick {
+          * body .add-patient-modal .backdrop form .gender-pick,
+          * body .add-patient-modal .backdrop form .patient-type-pick {
             border: 1px solid #f1ebee;
             padding: 2rem;
             border-radius: 2rem;
@@ -111,7 +112,8 @@
           font-weight: 600;
           margin-left: .5rem;
           cursor: pointer; }
-        * body .main-nav .main-list a, * body .main-nav .main-list svg {
+        * body .main-nav .main-list a,
+        * body .main-nav .main-list svg {
           font-size: 2rem;
           color: #f1ebee;
           -webkit-transition: color 200ms linear;
@@ -122,7 +124,8 @@
         * body .main-nav .main-list li {
           margin-top: 2rem;
           padding-left: .5rem; }
-        * body .main-nav .main-list li:hover svg, * body .main-nav .main-list li:hover a {
+        * body .main-nav .main-list li:hover svg,
+        * body .main-nav .main-list li:hover a {
           color: #f2780a; }
         * body .main-nav .main-list .patients-link ul {
           padding-left: 1rem; }
@@ -130,14 +133,16 @@
             display: none; }
           * body .main-nav .main-list .patients-link ul li.active {
             display: block; }
-          * body .main-nav .main-list .patients-link ul li.active:hover svg, * body .main-nav .main-list .patients-link ul li.active:hover a {
+          * body .main-nav .main-list .patients-link ul li.active:hover svg,
+          * body .main-nav .main-list .patients-link ul li.active:hover a {
             color: #f2780a; }
         * body .main-nav .main-list .patients-link .fa-chevron-down {
           margin-left: .5rem; }
         * body .main-nav .main-list .patients-link .fa-chevron-down.active {
           margin-left: .5rem;
           transform: rotate(180deg); }
-        * body .main-nav .main-list .patients-link:hover ul svg, * body .main-nav .main-list .patients-link:hover ul a {
+        * body .main-nav .main-list .patients-link:hover ul svg,
+        * body .main-nav .main-list .patients-link:hover ul a {
           color: #f1ebee; }
       * body .main-nav .log-out {
         position: absolute;
@@ -189,6 +194,8 @@
             align-items: center; }
             * body .main-wrapper header .user .user-logo svg {
               font-size: 5rem; }
+        * body .main-wrapper header .burger {
+          display: none; }
       * body .main-wrapper main {
         height: calc(100% - 10rem); }
         * body .main-wrapper main .dashboard-wrapper.active {
@@ -199,46 +206,6 @@
             font-size: 4rem;
             padding-top: 2rem;
             color: #f2780a; }
-          * body .main-wrapper main .dashboard-wrapper.active .stats {
-            width: 100%;
-            margin-top: 10rem;
-            display: grid;
-            grid-template-columns: auto 40rem auto;
-            grid-template-rows: auto 20rem 20rem auto;
-            justify-items: center;
-            align-content: center; }
-            * body .main-wrapper main .dashboard-wrapper.active .stats .box {
-              width: 40rem;
-              height: 20rem;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              background-color: #202a3a;
-              border-radius: 1rem;
-              box-shadow: 0px 5px 10px #202a3a; }
-              * body .main-wrapper main .dashboard-wrapper.active .stats .box h2 {
-                font-size: 2.5rem;
-                text-align: center;
-                color: #f1ebee; }
-              * body .main-wrapper main .dashboard-wrapper.active .stats .box p {
-                font-size: 2.5rem;
-                color: #f2780a; }
-            * body .main-wrapper main .dashboard-wrapper.active .stats .patients-stat {
-              grid-column-start: 2;
-              grid-column-end: 3;
-              grid-row-start: 2;
-              grid-row-end: 3; }
-            * body .main-wrapper main .dashboard-wrapper.active .stats .individual-patients-stat {
-              grid-column-start: 1;
-              grid-column-end: 2;
-              grid-row-start: 3;
-              grid-row-end: 4; }
-            * body .main-wrapper main .dashboard-wrapper.active .stats .group-patients-stat {
-              grid-column-start: 3;
-              grid-column-end: 4;
-              grid-row-start: 3;
-              grid-row-end: 4; }
         * body .main-wrapper main .dashboard-wrapper {
           display: none; }
         * body .main-wrapper main .patients-wrapper.active {
@@ -265,8 +232,7 @@
           display: none; }
         * body .main-wrapper main .groups-wrapper.active {
           display: block;
-          height: calc(100vh - 10rem);
-          overflow-y: scroll; }
+          height: calc(100vh - 10rem); }
           * body .main-wrapper main .groups-wrapper.active nav {
             width: 98%;
             height: 5rem;
@@ -295,7 +261,8 @@
             * body .main-wrapper main .groups-wrapper.active nav div.active::after {
               background-color: #f2780a; }
           * body .main-wrapper main .groups-wrapper.active .patients-shedule {
-            height: 100%; }
+            height: calc(100% - 10rem);
+            overflow-y: scroll; }
             * body .main-wrapper main .groups-wrapper.active .patients-shedule .events {
               width: 35rem;
               height: 35rem;
@@ -336,11 +303,11 @@
                 -o-transition: background-color 200ms linear;
                 transition: background-color 200ms linear; }
             * body .main-wrapper main .groups-wrapper.active .patients-shedule .physio-shedule.active {
-              height: 100%;
               padding: 1rem;
               grid-template-columns: 10rem auto auto;
               grid-template-rows: 10rem auto;
-              row-gap: 3rem; }
+              row-gap: 3rem;
+              column-gap: 3rem; }
               * body .main-wrapper main .groups-wrapper.active .patients-shedule .physio-shedule.active .time {
                 grid-column-end: 2;
                 grid-row-start: 2;
@@ -521,4 +488,4 @@
         * body .main-wrapper main .individual-wrapper {
           display: none; }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,32 @@
+*{
+    font-size: 50%;
+    body{
+        .add-patient-modal{
+            .backdrop{
+                form{
+                    font-size: 7.5rem;
+                }
+            }
+        }
+        .main-nav{
+            .logo-wrapper{
+                img{
+                    width: 20rem;
+                    height: 20rem;
+                }
+            }
+        }
+        .main-wrapper{
+            main{
+                .groups-wrapper.active{
+                    .patients-shedule{
+                        .physio-shedule.active{
+                            grid-template-columns: 5rem auto auto;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

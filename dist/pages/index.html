@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DMF Patient Management System</title>
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../assets/style/css/index.css">
-    <!-- 
-    <script src="../../src/scripts/UI/PageRender.js" defer></script>
-    <script src="../../src/scripts/UI/Modal.js" defer></script> -->
+    <!--Main style-->
+    <link rel="stylesheet" href="../assets/style/css/main.css">
+    <!--Small desktop style-->
+    <link rel="stylesheet" href="../assets/style/css/desktop-small/desktop-small.css"
+        media="screen and (min-width: 850px) and (max-width: 1439px)">
+    <!--Tablet and mobile landscape styling style-->
+    <link rel="stylesheet" href="../assets/style/css/tablet/tablet.css"
+        media="screen and (min-width: 426px) and (max-width: 849px)">
     <script src="../../src/App.js" defer type="module"></script>
 </head>
 
@@ -45,7 +49,8 @@
     </template>
     <nav class="main-nav">
         <section class="logo-wrapper">
-            <a href="index.html"><img src="../assets/img/logo.png" alt="dmg_logo" width="200px" height="200px"></a>
+            <a href="../pages/index.html"><img src="../assets/img/logo.png" alt="dmg_logo" width="200px"
+                    height="200px"></a>
         </section>
         <ul class="main-list">
             <li><i class="fas fa-home"></i><a data-handler="dashboard-wrapper">Dashboard</a></li>
@@ -70,12 +75,18 @@
                     <i class="far fa-user"></i>
                 </div>
             </div>
+            <div class="burger">
+                <div class="burger-line" id="line1"></div>
+                <div class="burger-line" id="line2"></div>
+                <div class="burger-line" id="line3"></div>
+            </div>
         </header>
         <main>
             <!----DASHBOARD START-->
             <section class="dashboard-wrapper active">
                 <h1>Dashboard</h1>
                 <h1>Welcome Admin</h1>
+                <!-- 
                 <section class="stats">
                     <div class="patients-stat box">
                         <h2>Active patients</h2>
@@ -89,7 +100,7 @@
                         <h2>Group patients</h2>
                         <p id="group-patients-no">35</p>
                     </div>
-                </section>
+                </section> -->
             </section>
             <!----DASHBOARD END-->
             <!----PATIENTS START-->

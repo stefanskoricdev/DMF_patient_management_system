@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAC;EACG,SAAS,EAAE,GAAG;EAIF,wCAAI;IACA,SAAS,EAAE,MAAM;EAMrB,kCAAG;IACC,KAAK,EAAE,KAAK;IACZ,MAAM,EAAE,KAAK;EAQT,yFAAsB;IAClB,qBAAqB,EAAE,cAAc;IACrC,OAAO,EAAE,CAAC",
+"sources": ["../../scss/desktop-small/desktop-small.scss"],
+"names": [],
+"file": "desktop-small.css"
+}

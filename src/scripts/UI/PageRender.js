@@ -1,5 +1,6 @@
 export class PageRender {
   constructor() {
+    this.mainNav = document.querySelector(".main-nav");
     this.mainList = document.querySelector(".main-list");
     this.navLinks = this.mainList.querySelectorAll("a");
     this.patientsLink = document.querySelector(".patients-link");
@@ -15,6 +16,7 @@ export class PageRender {
     this.individualNavLinks = document.querySelectorAll(
       ".individual-wrapper .physio-link"
     );
+    this.burgerResponsive = document.querySelector(".burger");
     //EVENT LISTENERS
     this.navLinks.forEach((link) => {
       link.addEventListener("click", this.pageRender.bind(this));
@@ -34,6 +36,15 @@ export class PageRender {
       link.addEventListener("click", this.sheduleRender.bind(this));
     });
     this.patientsLink.addEventListener("click", this.submenuRender.bind(this)); //Toggles patients link submenu in main nav
+    this.burgerResponsive.addEventListener(
+      "click",
+      this.navResponsiveRender.bind(this)
+    );
+  }
+
+  navResponsiveRender() {
+    this.burgerResponsive.classList.toggle("active");
+    this.mainNav.classList.toggle("active");
   }
 
   submenuRender(event) {
@@ -53,6 +64,8 @@ export class PageRender {
       section.classList.remove("active");
     });
     targetSection.classList.add("active");
+    this.mainNav.classList.remove("active"); //Removes nav on smaller screens
+    this.burgerResponsive.classList.remove("active"); //resets burger on smaller screens
   } // Renders between main pages
 
   sheduleRender(event) {
