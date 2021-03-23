@@ -5,22 +5,16 @@ export class Patients {
   constructor() {
     this.patients = [
       {
-        name: "Stefan Skoric",
+        name: "John Doe",
         gender: "male",
         patientType: "group",
-        contact: "065729018",
+        contact: "065000000",
       },
       {
-        name: "Maja Skoric",
+        name: "Jane Doe",
         gender: "female",
         patientType: "individual",
-        contact: "0650000000",
-      },
-      {
-        name: "Aleksandar Radinkovic",
-        gender: "male",
-        patientType: "individual",
-        contact: "0650000000",
+        contact: "065111111",
       },
     ];
     this.modal = new Modal();
@@ -50,7 +44,7 @@ export class Patients {
       (patient) => patient.patientType === "group"
     ).length;
     //console.log(patientsClass);
-    //console.log(`individual: ${individualAmount} , groups: ${groupsAmount}`);
+    console.log(`individual: ${individualAmount} , groups: ${groupsAmount}`);
     Chart.defaults.doughnut;
     let myChart = new Chart(ctx, {
       type: "doughnut",
@@ -58,7 +52,6 @@ export class Patients {
         labels: [`Group (${groupsAmount})`, `Individual (${individualAmount})`],
         datasets: [
           {
-            label: "Patients statistics",
             data: [groupsAmount, individualAmount],
             backgroundColor: ["rgba(95,121,169,1)", "rgba(242,120,10,1)"],
             hoverBackgroundColor: [
