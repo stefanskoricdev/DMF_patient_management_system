@@ -40,6 +40,7 @@
         z-index: 1; }
         * body .add-patient-modal .backdrop form {
           width: 50rem;
+          max-width: 100%;
           height: 70rem;
           background-color: #202a3a;
           border-radius: 2rem;
@@ -95,7 +96,7 @@
     * body .main-nav {
       width: 20rem;
       height: 100vh;
-      min-height: 100rem;
+      min-height: 50rem;
       background-color: #202a3a;
       border-radius: 0 0 2rem 0;
       box-shadow: 0px 5px 10px #202a3a;
@@ -110,6 +111,7 @@
         height: 30rem; }
         * body .main-nav .main-list a {
           font-weight: 600;
+          text-transform: uppercase;
           margin-left: .5rem;
           cursor: pointer; }
         * body .main-nav .main-list a,
@@ -200,12 +202,49 @@
         height: calc(100% - 10rem); }
         * body .main-wrapper main .dashboard-wrapper.active {
           display: block;
-          height: 100%;
-          margin-left: 2rem; }
+          height: 100%; }
           * body .main-wrapper main .dashboard-wrapper.active h1 {
             font-size: 4rem;
-            padding-top: 2rem;
-            color: #f2780a; }
+            padding: 2rem 0 0 2rem;
+            color: #202a3a;
+            text-transform: uppercase; }
+            * body .main-wrapper main .dashboard-wrapper.active h1 span {
+              font-size: inherit; }
+          * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper {
+            padding: 5rem 2rem;
+            display: flex;
+            justify-content: space-around;
+            height: 100%; }
+            * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container {
+              width: 80rem;
+              max-width: 100%;
+              max-height: 40rem;
+              padding: 2rem 0;
+              background-color: #202a3a;
+              border-radius: 1.8rem;
+              box-shadow: 1rem 1rem 1rem #202a3a;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+            * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table {
+              width: 80rem;
+              max-height: 100%;
+              height: 44rem;
+              border-spacing: .5rem;
+              color: #f1ebee;
+              display: block;
+              overflow-y: scroll; }
+              * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table td {
+                width: 20rem; }
+              * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table .table-caption {
+                border: none;
+                text-align: center;
+                text-transform: uppercase; }
+              * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table th, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table td {
+                font-size: 1.6rem;
+                border: 1px solid #f1ebee;
+                padding: .5rem 0 0 .5rem;
+                text-align: left; }
         * body .main-wrapper main .dashboard-wrapper {
           display: none; }
         * body .main-wrapper main .patients-wrapper.active {
@@ -216,6 +255,8 @@
           align-items: center; }
           * body .main-wrapper main .patients-wrapper.active div {
             width: 40rem;
+            max-width: 95%;
+            margin: 0 auto;
             height: 25rem;
             background-color: #202a3a;
             border-radius: 1rem;
@@ -463,7 +504,8 @@
                 width: 100%;
                 display: flex; }
                 * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul {
-                  width: 20%; }
+                  width: 20%;
+                  min-width: 20rem; }
                   * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul li {
                     font-size: 2rem;
                     display: flex;

@@ -1,7 +1,7 @@
 .main-nav {
     width: 20rem;
     height: 100vh;
-    min-height: 100rem;
+    min-height: 50rem;
     background-color: $dark-blue;
     border-radius: 0 0 2rem 0;
     box-shadow: 0px 5px 10px $dark-blue;
@@ -23,6 +23,7 @@
 
         a {
             font-weight: 600;
+            text-transform: uppercase;
             margin-left: .5rem;
             cursor: pointer;
         }

@@ -12,9 +12,9 @@
         }
         .main-nav{
             position: absolute;
+            width: 50vw;
             top: 10rem;
             left: 0;
-            width: 30vw;
             z-index: 100;
             background-color: rgba(32,42,58,.7);
             -webkit-transform: translateX(-100%);
@@ -48,18 +48,8 @@
                 .patients-wrapper.active{
                     flex-direction: column;
                 }
-                .individual-wrapper.active{
-                    .patients-shedule{
-                        .physio-shedule.active{
-                            overflow-x: scroll;
-                            padding: 0;
-                        }
-                    }
-                }
                 .groups-wrapper.active{
                     .patients-shedule{
-                        overflow-x: scroll;
-                        padding: 0 1rem;
                         .physio-shedule.active{
                             grid-template-columns: 5rem auto auto;
                         }

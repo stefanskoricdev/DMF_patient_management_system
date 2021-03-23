@@ -5,9 +5,9 @@
     font-size: 7rem; }
   * body .main-nav {
     position: absolute;
+    width: 50vw;
     top: 10rem;
     left: 0;
-    width: 30vw;
     z-index: 100;
     background-color: rgba(32, 42, 58, 0.7);
     -webkit-transform: translateX(-100%);
@@ -166,13 +166,7 @@
     transform: rotateZ(-45deg); } }
   * body .main-wrapper main .patients-wrapper.active {
     flex-direction: column; }
-  * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active {
-    overflow-x: scroll;
-    padding: 0; }
-  * body .main-wrapper main .groups-wrapper.active .patients-shedule {
-    overflow-x: scroll;
-    padding: 0 1rem; }
-    * body .main-wrapper main .groups-wrapper.active .patients-shedule .physio-shedule.active {
-      grid-template-columns: 5rem auto auto; }
+  * body .main-wrapper main .groups-wrapper.active .patients-shedule .physio-shedule.active {
+    grid-template-columns: 5rem auto auto; }
 
-/*# sourceMappingURL=tablet.css.map */
+/*# sourceMappingURL=mobile.css.map */

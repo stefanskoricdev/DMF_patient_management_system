@@ -12,9 +12,13 @@
     <!--Small desktop style-->
     <link rel="stylesheet" href="../assets/style/css/desktop-small/desktop-small.css"
         media="screen and (min-width: 850px) and (max-width: 1439px)">
-    <!--Tablet and mobile landscape styling style-->
+    <!--Tablet and mobile landscape screen style-->
     <link rel="stylesheet" href="../assets/style/css/tablet/tablet.css"
         media="screen and (min-width: 426px) and (max-width: 849px)">
+    <!--Mobile screen style-->
+    <link rel="stylesheet" href="../assets/style/css/mobile/mobile.css"
+        media="screen and (min-width: 300px) and (max-width: 425px)">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="../../src/App.js" defer type="module"></script>
 </head>
 
@@ -85,22 +89,29 @@
             <!----DASHBOARD START-->
             <section class="dashboard-wrapper active">
                 <h1>Dashboard</h1>
-                <h1>Welcome Admin</h1>
-                <!-- 
-                <section class="stats">
-                    <div class="patients-stat box">
-                        <h2>Active patients</h2>
-                        <p id="active-patients-no">50</p>
+                <h1>Welcome <span class="user-name">Admin</span></h1>
+                <section class="stats-wrapper">
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
                     </div>
-                    <div class="individual-patients-stat box">
-                        <h2>Individual patients</h2>
-                        <p id="indiv-patients-no">15</p>
+                    <div class="patients-container">
+                        <table id="patient-list">
+                            <thead>
+                                <tr>
+                                    <th class="table-caption" colspan="4">Patients List</th>
+                                </tr>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>Type</th>
+                                    <th>Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="group-patients-stat box">
-                        <h2>Group patients</h2>
-                        <p id="group-patients-no">35</p>
-                    </div>
-                </section> -->
+                </section>
             </section>
             <!----DASHBOARD END-->
             <!----PATIENTS START-->
@@ -517,7 +528,6 @@
             <!----INDIVIDUAL PATIENTS END-->
         </main>
     </section>
-
 </body>
 
 </html>

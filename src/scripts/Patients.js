@@ -3,11 +3,76 @@ import { updateUi } from "./UI/UpdateUi.js";
 
 export class Patients {
   constructor() {
-    this.patients = [];
+    this.patients = [
+      {
+        name: "Stefan",
+        gender: "male",
+        patientType: "group",
+        contact: "065729018",
+      },
+      {
+        name: "Sara",
+        gender: "male",
+        patientType: "group",
+        contact: "065729018",
+      },
+    ];
     this.modal = new Modal();
     const addPatientBtnHandler = this.modal.addPatientBtnHandler;
+    this.patientsListTable = document.getElementById("patient-list");
     //EVENT LISTENERS
     addPatientBtnHandler.addEventListener("click", this.addPatient.bind(this));
+  }
+
+  addPatientToTable(name, gender, type, contact) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${name}</td>
+      <td>${gender}</td>
+      <td>${type}</td>
+      <td>${contact}</td>
+      `;
+    this.patientsListTable.append(tr);
+  }
+
+  updateChart() {
+    let ctx = document.getElementById("myChart").getContext("2d");
+    let individualAmount = this.patients.filter(
+      (patient) => patient.patientType === "individual"
+    ).length;
+    let groupsAmount = this.patients.filter(
+      (patient) => patient.patientType === "group"
+    ).length;
+    //console.log(patientsClass);
+    //console.log(`individual: ${individualAmount} , groups: ${groupsAmount}`);
+    Chart.defaults.doughnut;
+    let myChart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: [`Group (${groupsAmount})`, `Individual (${individualAmount})`],
+        datasets: [
+          {
+            label: "Patients statistics",
+            data: [groupsAmount, individualAmount],
+            backgroundColor: ["rgba(95,121,169,1)", "rgba(242,120,10,1)"],
+            hoverBackgroundColor: [
+              "rgba(95,121,169,0.7)",
+              "rgba(242,120,10,0.7)",
+            ],
+            borderColor: ["rgba(241,235,238,1)", "rgba(241,235,238,1)"],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        legend: {
+          labels: {
+            fontColor: "rgba(242,120,10,1)",
+            fontSize: 16,
+          },
+        },
+      },
+    });
   }
 
   addPatient(event) {
@@ -38,9 +103,13 @@ export class Patients {
     this.patients.push(newPatient);
     targetedList.textContent = `${newPatient.name}`;
     updateUi();
+    this.updateChart();
+    this.addPatientToTable(
+      newPatient.name,
+      newPatient.gender,
+      newPatient.patientType,
+      newPatient.contact
+    );
     this.modal.hide;
-    console.log(this.patients);
   }
 }
-
-const patients = new Patients();

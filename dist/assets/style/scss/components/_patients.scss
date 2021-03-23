@@ -6,6 +6,8 @@
     align-items: center;
     div{
         width: 40rem;
+        max-width: 95%;
+        margin: 0 auto;
         height: 25rem;
         background-color: $dark-blue;
         border-radius: 1rem;
