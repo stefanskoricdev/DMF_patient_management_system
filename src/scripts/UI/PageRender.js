@@ -17,6 +17,7 @@ export class PageRender {
       ".individual-wrapper .physio-link"
     );
     this.burgerResponsive = document.querySelector(".burger");
+
     //EVENT LISTENERS
     this.navLinks.forEach((link) => {
       link.addEventListener("click", this.pageRender.bind(this));

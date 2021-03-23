@@ -5,8 +5,15 @@
   * body .main-nav .logo-wrapper img {
     width: 20rem;
     height: 20rem; }
+  * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper {
+    flex-direction: column; }
+    * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container {
+      width: 65%;
+      margin: 5rem auto; }
   * body .main-wrapper main .groups-wrapper.active .patients-shedule .physio-shedule.active {
     grid-template-columns: 5rem auto auto;
     padding: 0; }
+  * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active .days ul {
+    min-width: 15rem; }
 
 /*# sourceMappingURL=desktop-small.css.map */

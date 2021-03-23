@@ -45,6 +45,15 @@
         .main-wrapper{
             @import '../components/responsive/header-responsive';
             main{
+                .dashboard-wrapper.active{
+                    .stats-wrapper{
+                        flex-direction: column;
+                        .chart-container, .patients-container{
+                            width: 60%;
+                            margin: 5rem auto;
+                        }
+                    }
+                }
                 .patients-wrapper.active{
                     flex-direction: column;
                 }

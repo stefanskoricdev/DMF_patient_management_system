@@ -171,7 +171,6 @@
           color: #f2780a; }
     * body .main-wrapper {
       width: 100%;
-      height: 100vh;
       min-height: 100rem; }
       * body .main-wrapper header {
         height: 10rem;
@@ -201,8 +200,7 @@
       * body .main-wrapper main {
         height: calc(100% - 10rem); }
         * body .main-wrapper main .dashboard-wrapper.active {
-          display: block;
-          height: 100%; }
+          display: block; }
           * body .main-wrapper main .dashboard-wrapper.active h1 {
             font-size: 4rem;
             padding: 2rem 0 0 2rem;
@@ -211,44 +209,52 @@
             * body .main-wrapper main .dashboard-wrapper.active h1 span {
               font-size: inherit; }
           * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper {
-            padding: 5rem 2rem;
+            padding: 5rem 0;
             display: flex;
-            justify-content: space-around;
             height: 100%; }
             * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container {
-              width: 80rem;
-              max-width: 100%;
-              max-height: 40rem;
-              padding: 2rem 0;
+              width: 40%;
+              height: 40rem;
+              padding: 2rem;
+              margin: 0 auto;
               background-color: #202a3a;
               border-radius: 1.8rem;
               box-shadow: 1rem 1rem 1rem #202a3a;
               display: flex;
               justify-content: center;
               align-items: center; }
+            * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container {
+              flex-direction: column; }
+              * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container h2 {
+                margin: 2rem;
+                color: #f2780a;
+                text-decoration: underline;
+                text-transform: uppercase;
+                font-size: 1.6rem; }
             * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table {
-              width: 80rem;
-              max-height: 100%;
-              height: 44rem;
+              width: 100%;
+              height: 100%;
               border-spacing: .5rem;
               color: #f1ebee;
               display: block;
               overflow-y: scroll; }
-              * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table td {
-                width: 20rem; }
+              * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table th {
+                color: #f2780a;
+                min-width: 12rem; }
               * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table .table-caption {
                 border: none;
                 text-align: center;
-                text-transform: uppercase; }
+                text-transform: uppercase;
+                text-decoration: underline; }
               * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table th, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table td {
                 font-size: 1.6rem;
                 border: 1px solid #f1ebee;
-                padding: .5rem 0 0 .5rem;
+                border-radius: 1rem;
+                padding: .5rem;
                 text-align: left; }
         * body .main-wrapper main .dashboard-wrapper {
           display: none; }
         * body .main-wrapper main .patients-wrapper.active {
-          display: block;
           height: 100%;
           display: flex;
           justify-content: space-around;

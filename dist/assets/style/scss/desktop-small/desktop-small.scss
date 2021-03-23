@@ -18,11 +18,31 @@
         }
         .main-wrapper{
             main{
+                .dashboard-wrapper.active{
+                    .stats-wrapper{
+                        flex-direction: column;
+                        .chart-container, .patients-container{
+                            width: 65%;
+                            margin: 5rem auto;
+                        }
+                    }
+                }
                 .groups-wrapper.active{
                     .patients-shedule{
                         .physio-shedule.active{
                             grid-template-columns: 5rem auto auto;
                             padding: 0;
+                        }
+                    }
+                }
+                .individual-wrapper.active{
+                    .patients-shedule{
+                        .physio-shedule.active{
+                            .days{
+                                ul{
+                                    min-width: 15rem;
+                                }
+                            }
                         }
                     }
                 }

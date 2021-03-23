@@ -1,7 +1,5 @@
 .dashboard-wrapper.active {
     display: block;
-    height: 100%;
-
     h1 {
         font-size: 4rem;
         padding: 2rem 0 0 2rem;
@@ -12,15 +10,14 @@
         }
     }
     .stats-wrapper{
-        padding: 5rem 2rem;
+        padding: 5rem 0;
         display: flex;
-        justify-content: space-around;
         height: 100%;
         .chart-container, .patients-container{
-            width: 80rem;
-            max-width: 100%;
-            max-height: 40rem;
-            padding: 2rem 0;
+            width: 40%;
+            height: 40rem;
+            padding: 2rem;
+            margin: 0 auto;
             background-color: $dark-blue;
             border-radius: 1.8rem;
             box-shadow: 1rem 1rem 1rem $dark-blue;
@@ -28,27 +25,39 @@
             justify-content: center;
             align-items: center;
         }
+        .chart-container{
+            flex-direction: column;
+            h2{
+                margin: 2rem;
+                color: $orange;
+                text-decoration: underline;
+                text-transform: uppercase;
+                font-size: 1.6rem;
+            }
+        }
         .patients-container{
             table{
-                width: 80rem;
-                max-height: 100%;
-                height: 44rem;
+                width: 100%;
+                height: 100%;
                 border-spacing: .5rem;
                 color: $whiteish;
                 display: block;
                 overflow-y: scroll;
-                td{
-                    width: 20rem;
+                th{
+                    color: $orange;
+                    min-width: 12rem;
                 }
                 .table-caption{
                     border: none;
                     text-align: center;
                     text-transform: uppercase;
+                    text-decoration: underline;
                 }
                 th, td{
                     font-size: 1.6rem;
                     border: 1px solid $whiteish;
-                    padding: .5rem 0 0 .5rem;
+                    border-radius: 1rem;
+                    padding: .5rem;
                     text-align: left;
                 }
             }

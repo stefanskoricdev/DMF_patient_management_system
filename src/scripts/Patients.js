@@ -5,16 +5,22 @@ export class Patients {
   constructor() {
     this.patients = [
       {
-        name: "Stefan",
+        name: "Stefan Skoric",
         gender: "male",
         patientType: "group",
         contact: "065729018",
       },
       {
-        name: "Sara",
+        name: "Maja Skoric",
+        gender: "female",
+        patientType: "individual",
+        contact: "0650000000",
+      },
+      {
+        name: "Aleksandar Radinkovic",
         gender: "male",
-        patientType: "group",
-        contact: "065729018",
+        patientType: "individual",
+        contact: "0650000000",
       },
     ];
     this.modal = new Modal();

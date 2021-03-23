@@ -164,6 +164,11 @@
     -ms-transform: rotateZ(-45deg);
     -o-transform: rotateZ(-45deg);
     transform: rotateZ(-45deg); } }
+  * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper {
+    flex-direction: column; }
+    * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container {
+      width: 60%;
+      margin: 5rem auto; }
   * body .main-wrapper main .patients-wrapper.active {
     flex-direction: column; }
   * body .main-wrapper main .individual-wrapper.active .patients-shedule .physio-shedule.active {
