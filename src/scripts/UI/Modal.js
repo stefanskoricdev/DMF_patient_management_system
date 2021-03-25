@@ -24,24 +24,28 @@ export class Modal {
     this.modalBackdrop = this.modalElements.querySelector(".backdrop");
     this.modalInputs = this.modalElements.querySelectorAll("input");
     //EVENT LISTENERS
-    for (const lists of this.individualDaysSection) {
-      const list = lists.querySelectorAll("li");
-      for (const listEl of list) {
-        listEl.addEventListener("click", this.show.bind(this));
-      }
-    } //Event listeners to all li's inside days section!
-    for (const event of this.groupsSectionEvents) {
-      const list = event.querySelectorAll("li");
-      for (const listEl of list) {
-        listEl.addEventListener("click", this.show.bind(this));
-      }
-    }
+    this.individualDaysSection.forEach((day) => {
+      day.addEventListener("click", (e) => {
+        if (e.target.closest("li")) {
+          const listEl = e.target.closest("li");
+          this.show(listEl);
+        }
+      });
+    }); //Event listeners to all li's inside days section! (Event delegation used)
+    this.groupsSectionEvents.forEach((event) => {
+      event.addEventListener("click", (e) => {
+        if (e.target.closest("li")) {
+          const listEl = e.target.closest("li");
+          this.show(listEl);
+        }
+      });
+    }); //Event listeners to all li's inside days section!
     this.closeModalBtnHandler.addEventListener("click", this.hide.bind(this));
     this.modalBackdrop.addEventListener("click", this.hide.bind(this));
   }
 
-  show(e) {
-    this.targetedList = e.currentTarget;
+  show(listEl) {
+    this.targetedList = listEl;
     if ("content" in document.createElement("template")) {
       document.body.insertAdjacentElement("afterbegin", this.modalElement);
       this.hide.bind(this);

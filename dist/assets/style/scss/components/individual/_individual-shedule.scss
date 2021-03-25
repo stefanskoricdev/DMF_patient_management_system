@@ -46,11 +46,15 @@
                 width: 20%;
                 min-width: 20rem;
                 li{
-                    font-size: 2rem;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
+                    p{
+                        font-size: 2rem;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                    }
                 }
                 li:hover{
                     background: $orange;

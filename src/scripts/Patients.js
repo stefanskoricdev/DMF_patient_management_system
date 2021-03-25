@@ -29,7 +29,7 @@ export class Patients {
     tr.innerHTML = `
       <td>${name}</td>
       <td>${gender}</td>
-      <td>${type}</td>
+      <td>${type.toUpperCase()}</td>
       <td>${contact}</td>
       `;
     this.patientsListTable.append(tr);
@@ -99,8 +99,11 @@ export class Patients {
       patientType: patientTypeValue[0],
       contact: patientContact.value,
     };
+    console.log(newPatient);
     this.patients.push(newPatient);
-    targetedList.textContent = `${newPatient.name}`;
+    const patNameEl = document.createElement("p");
+    patNameEl.textContent = `${newPatient.name}`;
+    targetedList.append(patNameEl);
     updateUi();
     this.updateChart();
     this.addPatientToTable(
