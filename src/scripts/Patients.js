@@ -1,5 +1,9 @@
-import { Modal } from "./UI/Modal.js";
-import { updateUi } from "./UI/UpdateUi.js";
+import { AddPatientModal } from "./UI/AddPatientModal.js";
+import {
+  updateUi,
+  addPatientToTable,
+  updatePatientInfoModal,
+} from "./UI/UpdateUi.js";
 
 export class Patients {
   constructor() {
@@ -17,22 +21,78 @@ export class Patients {
         contact: "065111111",
       },
     ];
-    this.modal = new Modal();
-    const addPatientBtnHandler = this.modal.addPatientBtnHandler;
+
+    this.addPatientModal = new AddPatientModal();
+    const addPatientBtnHandler = this.addPatientModal.addPatientBtnHandler;
+    const individualDaysSection = this.addPatientModal.individualDaysSection;
+    const groupsSectionEvents = this.addPatientModal.groupsSectionEvents;
     this.patientsListTable = document.getElementById("patient-list");
+
+    this.patientInfoModalTempl = document.getElementById(
+      "patient-info-modal-template"
+    );
+    this.patientInfoModalElems = document.importNode(
+      this.patientInfoModalTempl.content,
+      true
+    );
+    this.patientInfoModalEl = this.patientInfoModalElems.querySelector(
+      ".patient-info-modal"
+    );
+    this.patientInfoModalBackdrop = this.patientInfoModalEl.querySelector(
+      ".backdrop"
+    );
+
     //EVENT LISTENERS
     addPatientBtnHandler.addEventListener("click", this.addPatient.bind(this));
+    individualDaysSection.forEach((day) => {
+      day.addEventListener("click", (e) => {
+        if (e.target.closest("p")) {
+          this.showPatientInfoModal(e);
+        }
+      });
+    });
+    groupsSectionEvents.forEach((event) => {
+      event.addEventListener("click", (e) => {
+        if (e.target.closest("p")) {
+          this.showPatientInfoModal(e);
+        }
+      });
+    });
+    this.patientInfoModalBackdrop.addEventListener(
+      "click",
+      this.hidePatientInfoModal.bind(this)
+    );
   }
 
-  addPatientToTable(name, gender, type, contact) {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${name}</td>
-      <td>${gender}</td>
-      <td>${type.toUpperCase()}</td>
-      <td>${contact}</td>
-      `;
-    this.patientsListTable.append(tr);
+  showPatientInfoModal(e) {
+    const filteredPatient = this.patients.filter((patient) => {
+      return patient.name === e.target.textContent;
+    });
+    const { name, gender, patientType, contact } = filteredPatient[0];
+    if ("content" in document.createElement("template")) {
+      document.body.insertAdjacentElement(
+        "afterbegin",
+        this.patientInfoModalEl
+      );
+    }
+    const patientInfoName = this.patientInfoModalEl.querySelector(
+      ".patient-name"
+    );
+    const patientInfoGender = this.patientInfoModalEl.querySelector(
+      ".patient-gender-age"
+    );
+    const patientInfoContact = this.patientInfoModalEl.querySelector(
+      ".patient-contact"
+    );
+    patientInfoName.textContent = `${name}`;
+    patientInfoGender.textContent = `${gender} - 28 years 01 months old`;
+    patientInfoContact.textContent = `${contact}`;
+  }
+
+  hidePatientInfoModal(e) {
+    if (e.target === this.patientInfoModalBackdrop) {
+      document.body.removeChild(this.patientInfoModalEl);
+    }
   }
 
   updateChart() {
@@ -43,8 +103,6 @@ export class Patients {
     let groupsAmount = this.patients.filter(
       (patient) => patient.patientType === "group"
     ).length;
-    //console.log(patientsClass);
-    console.log(`individual: ${individualAmount} , groups: ${groupsAmount}`);
     Chart.defaults.doughnut;
     let myChart = new Chart(ctx, {
       type: "doughnut",
@@ -76,42 +134,45 @@ export class Patients {
 
   addPatient(event) {
     event.preventDefault();
+    //Accessing form inputs and creating newPatient
     const patientName = document.getElementById("patient-name");
     const patientGender = document.getElementsByName("gender");
-    let patientGenderValue = [];
+    const patientType = document.getElementsByName("patient-type");
+    const patientGenderValue = [];
+    const patientTypeValue = [];
     patientGender.forEach((gender) => {
       if (gender.checked) {
         patientGenderValue.push(gender.value);
       }
     });
-    const patientType = document.getElementsByName("patient-type");
-    let patientTypeValue = [];
     patientType.forEach((type) => {
       if (type.checked) {
         patientTypeValue.push(type.value);
       }
     });
     const patientContact = document.getElementById("patient-contact");
-    const targetedList = this.modal.targetedList;
     const newPatient = {
       name: patientName.value,
       gender: patientGenderValue[0],
       patientType: patientTypeValue[0],
       contact: patientContact.value,
     };
-    console.log(newPatient);
     this.patients.push(newPatient);
+    //Locating clicked LI element
+    const targetedList = this.addPatientModal.targetedList;
+    //Creating new P element and appending it to clicked LI with a newPatient name.
     const patNameEl = document.createElement("p");
     patNameEl.textContent = `${newPatient.name}`;
     targetedList.append(patNameEl);
     updateUi();
     this.updateChart();
-    this.addPatientToTable(
+    addPatientToTable(
       newPatient.name,
       newPatient.gender,
       newPatient.patientType,
-      newPatient.contact
+      newPatient.contact,
+      this.patientsListTable
     );
-    this.modal.hide;
+    this.addPatientModal.hide;
   }
 }

@@ -93,6 +93,76 @@
           * body .add-patient-modal .backdrop form label svg {
             margin: 0 .5rem;
             color: #f2780a; }
+    * body .patient-info-modal {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      * body .patient-info-modal .backdrop {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(32, 42, 58, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2; }
+        * body .patient-info-modal .backdrop .patient-info-modal-wrapper {
+          width: 80rem;
+          max-width: 100%;
+          background-color: #202a3a;
+          color: #f1ebee;
+          border-radius: 2.5rem;
+          position: relative; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper h1 {
+            font-size: 3.5rem; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper h2 {
+            font-size: 2.5rem; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper p {
+            font-size: 2rem; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper h1, * body .patient-info-modal .backdrop .patient-info-modal-wrapper h2, * body .patient-info-modal .backdrop .patient-info-modal-wrapper p {
+            margin: 1rem; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options {
+            width: fit-content;
+            position: absolute;
+            top: 1rem;
+            right: 5rem;
+            color: #f1ebee;
+            font-size: 3rem; }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options svg {
+              position: relative;
+              z-index: 3;
+              cursor: pointer; }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options li {
+              display: none; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options.active li {
+            display: inline; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper {
+            display: flex;
+            padding: 1rem; }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-logo img {
+              width: 25rem;
+              height: 25rem;
+              border: 1px solid #f1ebee;
+              border-radius: 1rem;
+              padding: .5rem; }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-info {
+              position: relative;
+              width: calc(100% - 25rem); }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-info::after {
+              content: "";
+              display: block;
+              width: 90%;
+              height: .1rem;
+              background-color: #f1ebee;
+              position: absolute;
+              bottom: 0;
+              left: 5%; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-description p {
+            max-height: 25rem;
+            overflow-y: scroll; }
     * body .main-nav {
       width: 20rem;
       height: 100vh;
@@ -327,7 +397,6 @@
                 height: 5rem;
                 width: 30rem;
                 margin: 1.5rem auto;
-                font-size: 2.5rem;
                 font-weight: 600;
                 display: flex;
                 align-items: center;
@@ -343,6 +412,9 @@
                 transition: background-color 200ms linear;
                 cursor: pointer;
                 content: ''; }
+                * body .main-wrapper main .groups-wrapper.active .patients-shedule .events li p {
+                  width: 100%;
+                  font-size: 2.5rem; }
               * body .main-wrapper main .groups-wrapper.active .patients-shedule .events li:hover {
                 background-color: #f2780a;
                 -webkit-transition: background-color 200ms linear;

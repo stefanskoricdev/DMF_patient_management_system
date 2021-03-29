@@ -8,23 +8,23 @@
     <title>DMF Patient Management System</title>
     <script src="https://kit.fontawesome.com/d025e4f1ed.js" crossorigin="anonymous"></script>
     <!--Main style-->
-    <link rel="stylesheet" href="../assets/style/css/main.css">
+    <link rel="stylesheet" href="dist/assets/style/css/main.css">
     <!--Small desktop style-->
-    <link rel="stylesheet" href="../assets/style/css/desktop-small/desktop-small.css"
+    <link rel="stylesheet" href="dist/assets/style/css/desktop-small/desktop-small.css"
         media="screen and (min-width: 850px) and (max-width: 1439px)">
     <!--Tablet and mobile landscape screen style-->
-    <link rel="stylesheet" href="../assets/style/css/tablet/tablet.css"
+    <link rel="stylesheet" href="dist/assets/style/css/tablet/tablet.css"
         media="screen and (min-width: 426px) and (max-width: 849px)">
     <!--Mobile screen style-->
-    <link rel="stylesheet" href="../assets/style/css/mobile/mobile.css"
+    <link rel="stylesheet" href="dist/assets/style/css/mobile/mobile.css"
         media="screen and (min-width: 300px) and (max-width: 425px)">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-    <script src="../../src/App.js" defer type="module"></script>
+    <script src="src/App.js" defer type="module"></script>
 </head>
 
 <body>
     <template id="add-patient-modal-template">
-        <div class="add-patient-modal">
+        <section class="add-patient-modal">
             <div class="backdrop">
                 <form class="add-patient-form" action="">
                     <div id="close-modal"><i class="fas fa-times"></i></div>
@@ -49,12 +49,36 @@
                     <input id="add-patient-btn" type="submit" value="Add">
                 </form>
             </div>
-        </div>
+        </section>
+    </template>
+    <template id="patient-info-modal-template">
+        <section class="patient-info-modal">
+            <section class="backdrop">
+                <div class="patient-info-modal-wrapper">
+                    <ul id="patient-options"><i class="fas fa-ellipsis-h"></i>
+                        <li id="delete-patient">Delete</li>
+                    </ul>
+                    <div class="patient-info-wrapper">
+                        <div class="patient-logo">
+                            <img src="dist/assets/img/male_avatar.svg" alt="">
+                        </div>
+                        <div class="patient-info">
+                            <h1 class="patient-name"></h1>
+                            <h2 class="patient-gender-age"></h2>
+                            <p class="patient-contact"></p>
+                        </div>
+                    </div>
+                    <div class="patient-description">
+                        <h1>Observation</h1>
+                        <p></p>
+                    </div>
+                </div>
+            </section>
+        </section>
     </template>
     <nav class="main-nav">
         <section class="logo-wrapper">
-            <a href="../pages/index.html"><img src="../assets/img/logo.png" alt="dmg_logo" width="200px"
-                    height="200px"></a>
+            <a href="index.html"><img src="dist/assets/img/logo.png" alt="dmg_logo" width="200px" height="200px"></a>
         </section>
         <ul class="main-list">
             <li><i class="fas fa-home"></i><a data-handler="dashboard-wrapper">Dashboard</a></li>
@@ -272,7 +296,9 @@
                                 <li>
                                     <p>Stefan Skoric</p>
                                 </li>
-                                <li></li>
+                                <li>
+                                    <p>Maja Skoric</p>
+                                </li>
                                 <li></li>
                                 <li></li>
                                 <li></li>

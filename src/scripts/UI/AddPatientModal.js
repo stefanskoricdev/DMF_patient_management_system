@@ -1,5 +1,6 @@
 import { updateUi } from "./UpdateUi.js";
-export class Modal {
+import { Patients } from "../Patients.js";
+export class AddPatientModal {
   constructor() {
     this.individualSection = document.querySelector(".individual-wrapper");
     this.individualDaysSection = this.individualSection.querySelectorAll(
@@ -28,7 +29,10 @@ export class Modal {
       day.addEventListener("click", (e) => {
         if (e.target.closest("li")) {
           const listEl = e.target.closest("li");
-          this.show(listEl);
+          const patNameEl = listEl.querySelector("p");
+          if (!listEl.contains(patNameEl)) {
+            this.show(listEl);
+          }
         }
       });
     }); //Event listeners to all li's inside days section! (Event delegation used)
@@ -36,7 +40,10 @@ export class Modal {
       event.addEventListener("click", (e) => {
         if (e.target.closest("li")) {
           const listEl = e.target.closest("li");
-          this.show(listEl);
+          const patNameEl = listEl.querySelector("p");
+          if (!listEl.contains(patNameEl)) {
+            this.show(listEl);
+          }
         }
       });
     }); //Event listeners to all li's inside days section!
@@ -55,12 +62,10 @@ export class Modal {
   }
 
   hide(e) {
-    e.stopPropagation();
     if (
-      (e.currentTarget === this.closeModalBtnHandler ||
-        e.target === this.modalBackdrop ||
-        e.target === this.addPatientBtnHandler) &&
-      this.modalElement
+      e.currentTarget === this.closeModalBtnHandler ||
+      e.target === this.modalBackdrop ||
+      e.target === this.addPatientBtnHandler
     ) {
       updateUi();
       document.body.removeChild(this.modalElement);

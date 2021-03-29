@@ -6,6 +6,18 @@ export function updateUi() {
     }
   });
 }
+
+export function addPatientToTable(name, gender, type, contact, elem) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${name}</td>
+    <td>${gender}</td>
+    <td>${type}</td>
+    <td>${contact}</td>
+    `;
+  elem.append(tr);
+}
+
 export function updatePatientTable(patients, table) {
   for (const patient of patients) {
     const tr = document.createElement("tr");
@@ -17,4 +29,10 @@ export function updatePatientTable(patients, table) {
       `;
     table.append(tr);
   }
+}
+
+export function updatePatientInfoModal(filterElem, elTargetContent) {
+  const filteredPatients = filterElem.filter((patient) => {
+    return patient.name === elTargetContent;
+  });
 }
