@@ -166,7 +166,8 @@
     transform: rotateZ(-45deg); } }
   * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper {
     flex-direction: column; }
-    * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container, * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container {
+    * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .chart-container,
+    * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container {
       width: 80%;
       margin: 5rem auto; }
     * body .main-wrapper main .dashboard-wrapper.active .stats-wrapper .patients-container table .table-caption {

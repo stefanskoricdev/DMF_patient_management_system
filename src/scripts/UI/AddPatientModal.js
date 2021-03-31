@@ -19,11 +19,16 @@ export class AddPatientModal {
     this.addPatientBtnHandler = this.modalElements.getElementById(
       "add-patient-btn"
     );
-    this.closeModalBtnHandler = this.modalElements.getElementById(
-      "close-modal"
+    this.closeModalBtnHandler = this.modalElements.querySelectorAll(
+      ".close-modal"
     );
     this.modalBackdrop = this.modalElements.querySelector(".backdrop");
-    this.modalInputs = this.modalElements.querySelectorAll("input");
+    this.addPatientFirstPage = this.modalElement.querySelector(".first-page");
+    this.addPatientSecondPage = this.modalElement.querySelector(".second-page");
+    this.switchAddPatientPageBtns = this.modalElement.querySelectorAll(
+      "button"
+    );
+    //this.modalInputs = this.modalElements.querySelectorAll("input");
     //EVENT LISTENERS
     this.individualDaysSection.forEach((day) => {
       day.addEventListener("click", (e) => {
@@ -47,7 +52,16 @@ export class AddPatientModal {
         }
       });
     }); //Event listeners to all li's inside days section!
-    this.closeModalBtnHandler.addEventListener("click", this.hide.bind(this));
+    this.switchAddPatientPageBtns.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.addPatientFirstPage.classList.toggle("active");
+        this.addPatientSecondPage.classList.toggle("active");
+      });
+    }); //Switches between pages inside ADD PATIENT MODAL
+    this.closeModalBtnHandler.forEach((closeBtn) => {
+      closeBtn.addEventListener("click", this.hide.bind(this));
+    });
     this.modalBackdrop.addEventListener("click", this.hide.bind(this));
   }
 
@@ -63,7 +77,8 @@ export class AddPatientModal {
 
   hide(e) {
     if (
-      e.currentTarget === this.closeModalBtnHandler ||
+      e.currentTarget === this.closeModalBtnHandler[0] ||
+      e.currentTarget === this.closeModalBtnHandler[1] ||
       e.target === this.modalBackdrop ||
       e.target === this.addPatientBtnHandler
     ) {

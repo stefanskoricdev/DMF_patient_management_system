@@ -26,28 +26,40 @@
     <template id="add-patient-modal-template">
         <section class="add-patient-modal">
             <div class="backdrop">
-                <form class="add-patient-form" action="">
-                    <div id="close-modal"><i class="fas fa-times"></i></div>
-                    <label for="patient-name"><i class="fas fa-users"></i>Full Name</label>
-                    <input type="text" name="patient-name" id="patient-name" required>
-                    <div class="gender-pick">
-                        <p>Please select gender</p>
-                        <label for="male"><i class="fas fa-male"></i>Male</label>
-                        <input type="radio" id="male" value="male" name="gender" required>
-                        <label for="female"><i class="fas fa-female"></i>Female</label>
-                        <input type="radio" id="female" value="female" name="gender" required>
-                    </div>
-                    <div class="patient-type-pick">
-                        <p>Please select type</p>
-                        <label for="individual-type"><i class="fas fa-user-injured"></i>Individual</label>
-                        <input type="radio" id="individual-type" value="individual" name="patient-type" required>
-                        <label for="group-type"><i class="fas fa-users"></i>Group</label>
-                        <input type="radio" id="group-type" value="group" name="patient-type" required>
-                    </div>
-                    <label for="phone"><i class="fas fa-mobile-alt"></i>Phone number</label>
-                    <input type="tel" name="phone" id="patient-contact" required>
-                    <input id="add-patient-btn" type="submit" value="Add">
-                </form>
+                <div class="add-patient-wrapper">
+                    <form class="add-patient-form first-page active" action="">
+                        <div class="close-modal"><i class="fas fa-times"></i></div>
+                        <label for="patient-name"><i class="fas fa-users"></i>Full Name</label>
+                        <input type="text" name="patient-name" id="patient-name" required>
+                        <label for="patient-date-of-birth"><i class="fas fa-calendar-alt"></i>Date of birth</label>
+                        <input type="date" id="date-of-birth" name="patient-date-of-birth" value="2000-01-01">
+                        <div class="gender-pick">
+                            <p>Please select gender</p>
+                            <label for="male"><i class="fas fa-male"></i>Male</label>
+                            <input type="radio" id="male" value="male" name="gender" required>
+                            <label for="female"><i class="fas fa-female"></i>Female</label>
+                            <input type="radio" id="female" value="female" name="gender" required>
+                        </div>
+                        <label for="phone"><i class="fas fa-mobile-alt"></i>Phone number</label>
+                        <input type="tel" name="phone" id="patient-contact" required>
+                        <button class="next-btn">Next</button>
+                        <input id="add-patient-btn" type="submit" value="Add">
+                    </form>
+                    <form class="add-patient-form second-page" action="">
+                        <div class="close-modal"><i class="fas fa-times"></i></div>
+                        <label for="patient-observation">Observation</label>
+                        <textarea name="patient-observation" id="patient-observation-area" cols="20"
+                            rows="10"></textarea>
+                        <div class="patient-type-pick">
+                            <p>Please select type</p>
+                            <label for="individual-type"><i class="fas fa-user-injured"></i>Individual</label>
+                            <input type="radio" id="individual-type" value="individual" name="patient-type" required>
+                            <label for="group-type"><i class="fas fa-users"></i>Group</label>
+                            <input type="radio" id="group-type" value="group" name="patient-type" required>
+                        </div>
+                        <button class="back-btn">Back</button>
+                    </form>
+                </div>
             </div>
         </section>
     </template>
@@ -55,8 +67,8 @@
         <section class="patient-info-modal">
             <section class="backdrop">
                 <div class="patient-info-modal-wrapper">
-                    <ul id="patient-options"><i class="fas fa-ellipsis-h"></i>
-                        <li id="delete-patient">Delete</li>
+                    <ul class="patient-options"><i class="fas fa-ellipsis-h options-btn"></i>
+                        <li class="delete-patient">Delete</li>
                     </ul>
                     <div class="patient-info-wrapper">
                         <div class="patient-logo">
@@ -68,7 +80,7 @@
                             <p class="patient-contact"></p>
                         </div>
                     </div>
-                    <div class="patient-description">
+                    <div class="patient-observation">
                         <h1>Observation</h1>
                         <p></p>
                     </div>

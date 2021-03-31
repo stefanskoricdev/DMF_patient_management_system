@@ -38,61 +38,114 @@
         align-items: center;
         position: relative;
         z-index: 1; }
-        * body .add-patient-modal .backdrop form {
-          width: 50rem;
+        * body .add-patient-modal .backdrop .add-patient-wrapper {
+          display: flex;
+          width: 40rem;
           max-width: 100%;
-          height: 70rem;
           background-color: #202a3a;
           border-radius: 2rem;
-          font-size: 5rem;
-          color: #f1ebee;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          box-shadow: 2rem 2rem 2rem #202a3a; }
-          * body .add-patient-modal .backdrop form #close-modal {
-            position: absolute;
-            top: 1rem;
-            right: 2rem; }
-            * body .add-patient-modal .backdrop form #close-modal .fa-times {
-              font-size: 4rem;
-              color: #f2780a;
-              cursor: pointer; }
-          * body .add-patient-modal .backdrop form .gender-pick,
-          * body .add-patient-modal .backdrop form .patient-type-pick {
-            border: 1px solid #f1ebee;
-            padding: 2rem;
-            border-radius: 2rem;
-            margin: 2rem 0; }
-          * body .add-patient-modal .backdrop form input {
-            margin: 1rem 1rem;
-            background-color: #f1ebee;
-            border-radius: 1rem;
-            border: none; }
-          * body .add-patient-modal .backdrop form input[type='submit'] {
-            font-size: 2rem;
-            font-weight: 600;
-            width: 15rem;
-            height: 4rem;
-            border-radius: 2.5rem;
-            border: 1px solid #f1ebee;
-            background-color: #202a3a;
+          box-shadow: 2rem 2rem 2rem #202a3a;
+          overflow-x: hidden; }
+          * body .add-patient-modal .backdrop .add-patient-wrapper form {
+            min-width: 100%;
+            height: 70rem;
+            font-size: 5rem;
             color: #f1ebee;
-            cursor: pointer;
-            -webkit-transition: color 200ms linear;
-            -moz-transition: color 200ms linear;
-            -ms-transition: color 200ms linear;
-            -o-transition: color 200ms linear;
-            transition: color 200ms linear; }
-          * body .add-patient-modal .backdrop form input[type='submit']:hover {
-            border: 1px solid #202a3a;
-            background-color: #f1ebee;
-            color: #202a3a; }
-          * body .add-patient-modal .backdrop form label svg {
-            margin: 0 .5rem;
-            color: #f2780a; }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form .close-modal {
+              position: absolute;
+              top: 1rem;
+              right: 2rem; }
+              * body .add-patient-modal .backdrop .add-patient-wrapper form .close-modal .fa-times {
+                font-size: 4rem;
+                color: #f2780a;
+                cursor: pointer; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form .gender-pick,
+            * body .add-patient-modal .backdrop .add-patient-wrapper form .patient-type-pick {
+              border: 1px solid #f1ebee;
+              padding: 2rem;
+              border-radius: 2rem;
+              margin: 2rem 0; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form label svg {
+              margin: 0 .5rem;
+              color: #f2780a; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form input {
+              margin: 1rem 1rem;
+              background-color: #f1ebee;
+              border-radius: 1rem;
+              border: none; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form input:not([type='radio']) {
+              box-shadow: 0.1rem 0.1rem 0.5rem #f1ebee; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form textarea {
+              width: 80%;
+              margin: 1rem auto;
+              padding: .5rem;
+              font-size: 2rem;
+              color: #f1ebee;
+              background-color: #202a3a;
+              border: 1px solid #f1ebee;
+              border-radius: 1.8rem; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form input[type='submit'],
+            * body .add-patient-modal .backdrop .add-patient-wrapper form button {
+              font-size: 2rem;
+              font-weight: 600;
+              color: #f1ebee;
+              width: 15rem;
+              height: 4rem;
+              margin: 2rem;
+              border-radius: 2.5rem;
+              border: 1px solid #f1ebee;
+              background-color: #202a3a;
+              box-shadow: 0.1rem 0.1rem 0.5rem #f1ebee;
+              cursor: pointer;
+              -webkit-transition: color 200ms linear;
+              -moz-transition: color 200ms linear;
+              -ms-transition: color 200ms linear;
+              -o-transition: color 200ms linear;
+              transition: color 200ms linear; }
+            * body .add-patient-modal .backdrop .add-patient-wrapper form input[type='submit']:hover,
+            * body .add-patient-modal .backdrop .add-patient-wrapper form button:hover {
+              border: 1px solid #202a3a;
+              background-color: #f1ebee;
+              color: #202a3a; }
+        * body .add-patient-modal .backdrop .first-page.active {
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
+          transform: translateX(0);
+          -webkit-transition: transform 200ms linear;
+          -moz-transition: transform 200ms linear;
+          -ms-transition: transform 200ms linear;
+          -o-transition: transform 200ms linear;
+          transition: transform 200ms linear; }
+        * body .add-patient-modal .backdrop .first-page {
+          -webkit-transform: translateX(-100%);
+          -moz-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+          -o-transform: translateX(-100%);
+          transform: translateX(-100%); }
+        * body .add-patient-modal .backdrop .second-page {
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
+          transform: translateX(0);
+          -webkit-transition: transform 200ms linear;
+          -moz-transition: transform 200ms linear;
+          -ms-transition: transform 200ms linear;
+          -o-transition: transform 200ms linear;
+          transition: transform 200ms linear; }
+        * body .add-patient-modal .backdrop .second-page.active {
+          -webkit-transform: translateX(-100%);
+          -moz-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+          -o-transform: translateX(-100%);
+          transform: translateX(-100%); }
     * body .patient-info-modal {
       display: block;
       width: 100%;
@@ -122,35 +175,47 @@
             font-size: 2.5rem; }
           * body .patient-info-modal .backdrop .patient-info-modal-wrapper p {
             font-size: 2rem; }
-          * body .patient-info-modal .backdrop .patient-info-modal-wrapper h1, * body .patient-info-modal .backdrop .patient-info-modal-wrapper h2, * body .patient-info-modal .backdrop .patient-info-modal-wrapper p {
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper h1,
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper h2,
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper p {
             margin: 1rem; }
-          * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options {
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-options {
             width: fit-content;
             position: absolute;
             top: 1rem;
-            right: 5rem;
+            right: 2rem;
             color: #f1ebee;
-            font-size: 3rem; }
-            * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options svg {
-              position: relative;
-              z-index: 3;
-              cursor: pointer; }
-            * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options li {
-              display: none; }
-          * body .patient-info-modal .backdrop .patient-info-modal-wrapper #patient-options.active li {
-            display: inline; }
+            font-size: 3rem;
+            z-index: 3;
+            cursor: pointer; }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-options li {
+              display: none;
+              position: absolute;
+              padding: 0 2rem;
+              top: 4rem;
+              right: 0;
+              background-color: #202a3a;
+              border-radius: .5rem;
+              border-bottom: 1px solid #f1ebee;
+              border-right: 1px solid #f1ebee;
+              font-size: 1.8rem; }
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-options.active li {
+            display: block; }
           * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper {
             display: flex;
             padding: 1rem; }
-            * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-logo img {
-              width: 25rem;
-              height: 25rem;
-              border: 1px solid #f1ebee;
-              border-radius: 1rem;
-              padding: .5rem; }
+            * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-logo {
+              width: 40%; }
+              * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-logo img {
+                width: 100%;
+                height: 25rem;
+                border: 1px solid #f1ebee;
+                border-radius: 1rem;
+                padding: .5rem; }
             * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-info {
               position: relative;
-              width: calc(100% - 25rem); }
+              width: 56%;
+              padding: 2rem 2%; }
             * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-info-wrapper .patient-info::after {
               content: "";
               display: block;
@@ -160,8 +225,11 @@
               position: absolute;
               bottom: 0;
               left: 5%; }
-          * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-description p {
+          * body .patient-info-modal .backdrop .patient-info-modal-wrapper .patient-observation p {
+            display: block;
             max-height: 25rem;
+            width: 95%;
+            overflow-wrap: break-word;
             overflow-y: scroll; }
     * body .main-nav {
       width: 20rem;

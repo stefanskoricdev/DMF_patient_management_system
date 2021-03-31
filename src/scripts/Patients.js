@@ -8,7 +8,7 @@ import {
 export class Patients {
   constructor() {
     this.patients = [
-      {
+      /* {
         name: "John Doe",
         gender: "male",
         patientType: "group",
@@ -19,7 +19,7 @@ export class Patients {
         gender: "female",
         patientType: "individual",
         contact: "065111111",
-      },
+      }, */
     ];
 
     this.addPatientModal = new AddPatientModal();
@@ -41,7 +41,9 @@ export class Patients {
     this.patientInfoModalBackdrop = this.patientInfoModalEl.querySelector(
       ".backdrop"
     );
-
+    this.patientInfoOptions = this.patientInfoModalEl.querySelector(
+      ".patient-options"
+    );
     //EVENT LISTENERS
     addPatientBtnHandler.addEventListener("click", this.addPatient.bind(this));
     individualDaysSection.forEach((day) => {
@@ -62,13 +64,22 @@ export class Patients {
       "click",
       this.hidePatientInfoModal.bind(this)
     );
+    this.patientInfoOptions.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
   }
 
   showPatientInfoModal(e) {
     const filteredPatient = this.patients.filter((patient) => {
       return patient.name === e.target.textContent;
     });
-    const { name, gender, patientType, contact } = filteredPatient[0];
+    const {
+      name,
+      gender,
+      dateOfBirth,
+      contact,
+      observation,
+    } = filteredPatient[0];
     if ("content" in document.createElement("template")) {
       document.body.insertAdjacentElement(
         "afterbegin",
@@ -84,9 +95,21 @@ export class Patients {
     const patientInfoContact = this.patientInfoModalEl.querySelector(
       ".patient-contact"
     );
+    const patientInfoObservation = this.patientInfoModalEl.querySelector(
+      ".patient-observation > p"
+    );
+    const patientInfoLogo = this.patientInfoModalEl.querySelector(
+      ".patient-logo > img"
+    );
     patientInfoName.textContent = `${name}`;
-    patientInfoGender.textContent = `${gender} - 28 years 01 months old`;
+    patientInfoGender.textContent = `${gender} - ${dateOfBirth}`;
     patientInfoContact.textContent = `${contact}`;
+    patientInfoObservation.textContent = `${observation}`;
+    if (gender === "male") {
+      patientInfoLogo.src = "dist/assets/img/male_avatar.svg";
+    } else {
+      patientInfoLogo.src = "dist/assets/img/female_avatar.svg";
+    } //Makes changes of logo (male or female avatar) based on gender pick.
   }
 
   hidePatientInfoModal(e) {
@@ -151,13 +174,20 @@ export class Patients {
       }
     });
     const patientContact = document.getElementById("patient-contact");
+    const patientObservation = document.getElementById(
+      "patient-observation-area"
+    );
+    const dateOfBirth = document.getElementById("date-of-birth");
     const newPatient = {
       name: patientName.value,
+      dateOfBirth: dateOfBirth.value,
       gender: patientGenderValue[0],
-      patientType: patientTypeValue[0],
       contact: patientContact.value,
+      observation: patientObservation.value,
+      patientType: patientTypeValue[0],
     };
     this.patients.push(newPatient);
+    console.log(this.patients);
     //Locating clicked LI element
     const targetedList = this.addPatientModal.targetedList;
     //Creating new P element and appending it to clicked LI with a newPatient name.

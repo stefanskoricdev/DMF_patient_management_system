@@ -1,10 +1,12 @@
 export function updateUi() {
   const addPatientModalInputs = document.querySelectorAll("input");
+  const addPatientModalTextArea = document.querySelector("textarea");
   addPatientModalInputs.forEach((input) => {
     if (input.type == "text" || input.type == "tel") {
       input.value = "";
     }
   });
+  addPatientModalTextArea.value = "";
 }
 
 export function addPatientToTable(name, gender, type, contact, elem) {
