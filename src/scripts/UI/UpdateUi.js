@@ -5,6 +5,9 @@ export function updateUi() {
     if (input.type == "text" || input.type == "tel") {
       input.value = "";
     }
+    if (input.type == "radio") {
+      input.checked = false;
+    }
   });
   addPatientModalTextArea.value = "";
 }
@@ -21,6 +24,7 @@ export function addPatientToTable(name, gender, type, contact, elem) {
 }
 
 export function updatePatientTable(patients, table) {
+  table.innerHTML = "";
   for (const patient of patients) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -33,8 +37,15 @@ export function updatePatientTable(patients, table) {
   }
 }
 
-export function updatePatientInfoModal(filterElem, elTargetContent) {
-  const filteredPatients = filterElem.filter((patient) => {
-    return patient.name === elTargetContent;
+export function removePatientName(filteredPatientName) {
+  const main = document.querySelector("main");
+  const patientSheduleLists = main.querySelectorAll("li");
+  patientSheduleLists.forEach((list) => {
+    const listEl = list.querySelector("p");
+    if (list.contains(listEl)) {
+      if (list.innerText === filteredPatientName) {
+        list.removeChild(listEl);
+      }
+    }
   });
 }

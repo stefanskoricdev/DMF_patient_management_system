@@ -1,5 +1,4 @@
 import { updateUi } from "./UpdateUi.js";
-import { Patients } from "../Patients.js";
 export class AddPatientModal {
   constructor() {
     this.individualSection = document.querySelector(".individual-wrapper");
@@ -28,7 +27,6 @@ export class AddPatientModal {
     this.switchAddPatientPageBtns = this.modalElement.querySelectorAll(
       "button"
     );
-    //this.modalInputs = this.modalElements.querySelectorAll("input");
     //EVENT LISTENERS
     this.individualDaysSection.forEach((day) => {
       day.addEventListener("click", (e) => {
@@ -40,7 +38,8 @@ export class AddPatientModal {
           }
         }
       });
-    }); //Event listeners to all li's inside days section! (Event delegation used)
+    });
+    //Event listeners to all li's inside days section! (Event delegation used)
     this.groupsSectionEvents.forEach((event) => {
       event.addEventListener("click", (e) => {
         if (e.target.closest("li")) {
@@ -51,14 +50,16 @@ export class AddPatientModal {
           }
         }
       });
-    }); //Event listeners to all li's inside days section!
+    });
+    //Event listeners to all li's inside days section!
     this.switchAddPatientPageBtns.forEach((button) => {
       button.addEventListener("click", (e) => {
         e.preventDefault();
         this.addPatientFirstPage.classList.toggle("active");
         this.addPatientSecondPage.classList.toggle("active");
       });
-    }); //Switches between pages inside ADD PATIENT MODAL
+    });
+    //Switches between pages inside ADD PATIENT MODAL
     this.closeModalBtnHandler.forEach((closeBtn) => {
       closeBtn.addEventListener("click", this.hide.bind(this));
     });

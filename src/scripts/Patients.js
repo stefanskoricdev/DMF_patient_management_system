@@ -2,7 +2,8 @@ import { AddPatientModal } from "./UI/AddPatientModal.js";
 import {
   updateUi,
   addPatientToTable,
-  updatePatientInfoModal,
+  removePatientName,
+  updatePatientTable,
 } from "./UI/UpdateUi.js";
 
 export class Patients {
@@ -21,13 +22,16 @@ export class Patients {
         contact: "065111111",
       }, */
     ];
+    /* const main = document.querySelector("main");
+    const patientSheduleLists = main.querySelectorAll("li");
+    console.log(patientSheduleLists); */
 
     this.addPatientModal = new AddPatientModal();
     const addPatientBtnHandler = this.addPatientModal.addPatientBtnHandler;
     const individualDaysSection = this.addPatientModal.individualDaysSection;
     const groupsSectionEvents = this.addPatientModal.groupsSectionEvents;
     this.patientsListTable = document.getElementById("patient-list");
-
+    this.patientsListTableBody = this.patientsListTable.querySelector("tbody");
     this.patientInfoModalTempl = document.getElementById(
       "patient-info-modal-template"
     );
@@ -44,8 +48,12 @@ export class Patients {
     this.patientInfoOptions = this.patientInfoModalEl.querySelector(
       ".patient-options"
     );
+    this.deletePatientBtn = this.patientInfoModalEl.querySelector(
+      ".delete-patient"
+    );
     //EVENT LISTENERS
     addPatientBtnHandler.addEventListener("click", this.addPatient.bind(this));
+
     individualDaysSection.forEach((day) => {
       day.addEventListener("click", (e) => {
         if (e.target.closest("p")) {
@@ -67,10 +75,30 @@ export class Patients {
     this.patientInfoOptions.addEventListener("click", function () {
       this.classList.toggle("active");
     });
+    this.deletePatientBtn.addEventListener(
+      "click",
+      this.removePatient.bind(this)
+    );
+  }
+  removePatient(e) {
+    const patientName = e.target.closest("div").querySelector(".patient-name");
+    let patientIndex;
+    let filteredPatientName;
+    this.patients.forEach((patient, index) => {
+      if (patient.name === patientName.textContent) {
+        patientIndex = index;
+        filteredPatientName = patient.name;
+      }
+    });
+    this.patients.splice(patientIndex, 1);
+    removePatientName(filteredPatientName);
+    this.updateChart();
+    updatePatientTable(this.patients, this.patientsListTableBody);
+    this.hidePatientInfoModal.bind(this);
   }
 
   showPatientInfoModal(e) {
-    const filteredPatient = this.patients.filter((patient) => {
+    this.filteredPatient = this.patients.filter((patient) => {
       return patient.name === e.target.textContent;
     });
     const {
@@ -79,7 +107,7 @@ export class Patients {
       dateOfBirth,
       contact,
       observation,
-    } = filteredPatient[0];
+    } = this.filteredPatient[0];
     if ("content" in document.createElement("template")) {
       document.body.insertAdjacentElement(
         "afterbegin",
@@ -113,7 +141,10 @@ export class Patients {
   }
 
   hidePatientInfoModal(e) {
-    if (e.target === this.patientInfoModalBackdrop) {
+    if (
+      e.target === this.patientInfoModalBackdrop ||
+      e.target === this.deletePatientBtn
+    ) {
       document.body.removeChild(this.patientInfoModalEl);
     }
   }
@@ -178,6 +209,17 @@ export class Patients {
       "patient-observation-area"
     );
     const dateOfBirth = document.getElementById("date-of-birth");
+    console.log(patientTypeValue[0]);
+    if (
+      patientName.value.trim() === "" ||
+      dateOfBirth.value.trim() === "" ||
+      !patientGenderValue[0] === undefined ||
+      patientContact.value.trim() === "" ||
+      !patientTypeValue[0] === undefined
+    ) {
+      alert("Please fill out all fields!");
+      return;
+    }
     const newPatient = {
       name: patientName.value,
       dateOfBirth: dateOfBirth.value,
@@ -187,7 +229,6 @@ export class Patients {
       patientType: patientTypeValue[0],
     };
     this.patients.push(newPatient);
-    console.log(this.patients);
     //Locating clicked LI element
     const targetedList = this.addPatientModal.targetedList;
     //Creating new P element and appending it to clicked LI with a newPatient name.
@@ -201,7 +242,7 @@ export class Patients {
       newPatient.gender,
       newPatient.patientType,
       newPatient.contact,
-      this.patientsListTable
+      this.patientsListTableBody
     );
     this.addPatientModal.hide;
   }

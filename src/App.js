@@ -9,7 +9,7 @@ class App {
     this.updateChart = this.patients.updateChart();
     this.updatePatientTable = updatePatientTable(
       this.patients.patients,
-      this.patients.patientsListTable
+      this.patients.patientsListTableBody
     );
   }
 }
