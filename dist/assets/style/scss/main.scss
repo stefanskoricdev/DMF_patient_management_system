@@ -40,6 +40,7 @@
         display: flex;
         background-color: $whiteish;
         position: relative;
+        @import "components/login";
         @import "components/add-patient-modal";
         @import "components/patient-info-modal";
         @import "components/navigation";

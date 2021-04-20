@@ -22,6 +22,22 @@
     display: flex;
     background-color: #f1ebee;
     position: relative; }
+    * body .login {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #202a3a;
+      color: #f1ebee;
+      z-index: 1000; }
+      * body .login form {
+        display: flex;
+        flex-direction: column; }
     * body .add-patient-modal {
       display: block;
       width: 100%;
