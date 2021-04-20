@@ -1,4 +1,4 @@
-# PATIENT MANAGEMENT SYSTEM
+# PATIENT MANAGEMENT APP
 
 ## Still in progress...
 
